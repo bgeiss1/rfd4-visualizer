@@ -1,0 +1,12 @@
+# The binder out of the RFD4 quickstart, pointed at the example input that ships with the
+# repo. Copy that file next to this one first:
+#   cp ~/rfd4/RFD4-Proteina/docs/examples/inputs/5o45_cropped.cif.zst .
+#
+# This run is the canary. It proves the install works and gives us frames to look at
+# before any GPU time goes on a real target.
+binder:
+  input: 5o45_cropped.cif.zst
+  contig: "50-120, /0, A17-131"
+  conditions:
+    C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
+    C_SEQ: {true: [{select: "sel('A')"}]}

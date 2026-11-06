@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare with BindCraft2 · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="compare.title"></h1>
+    <p data-t="compare.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="compare.tableTitle"></h2>
+    <p data-t="compare.table"></p>
+    <table class="grid small" id="vs"></table>
+  </section>
+
+  <section class="card">
+    <h2 data-t="compare.sameTitle"></h2>
+    <p data-t="compare.same"></p>
+    <table class="grid small" id="numbers"></table>
+  </section>
+
+  <section class="card">
+    <h2 data-t="compare.whenTitle"></h2>
+    <p data-t="compare.when"></p>
+    <ul class="makes" id="when"></ul>
+  </section>
+</main>
+<script type="module" src="js/pages/compare.js"></script>
+</body>
+</html>

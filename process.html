@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How a run works · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="process.title"></h1>
+    <p data-t="process.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="process.stepsTitle"></h2>
+    <p data-t="process.steps"></p>
+    <div id="steps"></div>
+    <div class="player" id="stepPlayer"></div>
+    <p class="note note" data-t="process.stepsNote"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="process.whatTitle"></h2>
+    <p data-t="process.what"></p>
+    <table class="grid small" id="knobs"></table>
+  </section>
+
+  <section class="card">
+    <h2 data-t="process.pipelineTitle"></h2>
+    <p data-t="process.pipeline"></p>
+    <ol class="makes-list" id="pipeline"></ol>
+  </section>
+
+  <section class="card">
+    <h2 data-t="process.notTitle"></h2>
+    <p data-t="process.not"></p>
+    <ul class="makes" id="not"></ul>
+  </section>
+</main>
+<script type="module" src="js/pages/process.js"></script>
+</body>
+</html>

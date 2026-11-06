@@ -1,0 +1,3 @@
+{
+ "note": "BindCraft2 numbers for the same targets, copied across from the BindCraft2 visualizer so the compare page can put them side by side. One key per target, named the same way as the target field on a captured run in runs.json. Example shape: \"3evg_apo\": { \"trajectories\": 40, \"accepted\": 1, \"gpuHours\": 3.4 }."
+}

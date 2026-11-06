@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch it fold · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="trajectory.title"></h1>
+    <p data-t="trajectory.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="trajectory.pickTitle"></h2>
+    <div class="seg-inline" id="pick"></div>
+    <p class="small muted" id="pickNote"></p>
+  </section>
+
+  <section class="work">
+    <div class="viewer-wrap">
+      <div class="viewer" id="viewer"></div>
+      <div class="player" id="player"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="panel">
+      <h2 data-t="trajectory.readTitle"></h2>
+      <p data-t="trajectory.read"></p>
+      <dl class="readout" id="readout"></dl>
+      <p class="note note" data-t="trajectory.noisy"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="trajectory.howTitle"></h2>
+    <p data-t="trajectory.how"></p>
+    <pre class="code" id="howCmd"></pre>
+    <table class="grid small" id="trajOpts"></table>
+  </section>
+</main>
+<script type="module" src="js/pages/trajectory.js"></script>
+</body>
+</html>

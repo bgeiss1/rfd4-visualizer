@@ -1,0 +1,11 @@
+# Scaffold a motif: hold three residues and build a protein around them.
+#
+# Change A61-63 to the residues you actually want held. Remember that the numbers are the
+# mmCIF label_seq_id, not the auth_seq_id you read off in PyMOL, so check them before
+# trusting them.
+scaffold:
+  input: 3evg_apo.cif
+  contig: "20-40, A61-63, 20-40"
+  conditions:
+    C_CRD: {true: [{select: "sel('A/*/[61-63]')"}]}
+    C_SEQ: {true: [{select: "sel('A/*/[61-63]')"}]}

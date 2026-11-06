@@ -1,0 +1,11 @@
+{
+  "name": "rfd4-visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A teaching site for RFD4-Proteina structure generation (MIP 662). Replays real runs.",
+  "type": "module",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "test": "node tests/run.mjs"
+  }
+}

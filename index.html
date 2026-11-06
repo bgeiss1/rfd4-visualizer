@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="index.title"></h1>
+    <p data-t="index.intro"></p>
+    <p data-t="index.oneCommand"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="index.stepsTitle"></h2>
+    <ol class="phases" id="phases"></ol>
+  </section>
+
+  <section class="card">
+    <h2 data-t="index.runsTitle"></h2>
+    <p data-t="index.runs"></p>
+    <div class="targets" id="runs"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="index.countsTitle"></h2>
+    <p data-t="index.counts"></p>
+    <div id="funnel" class="funnel"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="index.vsTitle"></h2>
+    <p data-t="index.vs"></p>
+    <table class="grid small" id="vs"></table>
+  </section>
+</main>
+<script type="module" src="js/pages/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+ "note": "Worked condition specs for the spec page. Every one of these is checked by the test suite, so none of them teaches a spec RFD4 would refuse. Edit the prose in data/text.json, not here.",
+ "order": ["binder", "hotspot", "motif", "nocys", "rigid", "invfold"],
+ "examples": {
+  "binder": {
+   "title": "A binder, nothing held back",
+   "textKey": "example.binder",
+   "command": "rfd4-generate inputs=binder.yaml out_dir=./runs/binder num_replicates=8",
+   "spec": {
+    "binder": {
+     "input": "3evg_apo.cif",
+     "contig": "50-120, /0, A1-257",
+     "conditions": {
+      "C_CRDGRP": { "1": [{ "select": "sel('A/*/*/[N,CA,C,O]')" }] },
+      "C_SEQ": { "true": [{ "select": "sel('A')" }] }
+     }
+    }
+   }
+  },
+  "hotspot": {
+   "title": "The same binder, aimed at one face",
+   "textKey": "example.hotspot",
+   "command": "rfd4-generate inputs=hotspot.yaml out_dir=./runs/hotspot num_replicates=8",
+   "spec": {
+    "binder_faceA": {
+     "input": "3evg_apo.cif",
+     "contig": "50-120, /0, A1-257",
+     "conditions": {
+      "C_CRDGRP": { "1": [{ "select": "sel('A/*/*/[N,CA,C,O]')" }] },
+      "C_SEQ": { "true": [{ "select": "sel('A')" }] },
+      "C_HOT": { "true": [{ "select": "sel('A/*/[61-63, 80-84]')" }] }
+     }
+    }
+   }
+  },
+  "motif": {
+   "title": "Scaffold a motif",
+   "textKey": "example.motif",
+   "command": "rfd4-generate inputs=motif.yaml out_dir=./runs/motif num_replicates=16",
+   "spec": {
+    "scaffold": {
+     "input": "3evg_apo.cif",
+     "contig": "20-40, A61-63, 20-40",
+     "conditions": {
+      "C_CRD": { "true": [{ "select": "sel('A/*/[61-63]')" }] },
+      "C_SEQ": { "true": [{ "select": "sel('A/*/[61-63]')" }] }
+     }
+    }
+   }
+  },
+  "nocys": {
+   "title": "A binder with no cysteines",
+   "textKey": "example.nocys",
+   "command": "rfd4-generate inputs=nocys.yaml out_dir=./runs/nocys num_replicates=8",
+   "spec": {
+    "binder_nocys": {
+     "input": "aj_il15.cif",
+     "contig": "80-110, /0, A17-133",
+     "conditions": {
+      "C_CRDGRP": { "1": [{ "select": "sel('A/*/*/[N,CA,C,O]')" }] },
+      "C_SEQ": { "true": [{ "select": "sel('A')" }] },
+      "C_SEQ_PROB_CYS": { "0.0": [{ "select": "sel('B')" }] }
+     }
+    }
+   }
+  },
+  "rigid": {
+   "title": "Hold a group of atoms rigid",
+   "textKey": "example.rigid",
+   "command": "rfd4-generate inputs=rigid.yaml out_dir=./runs/rigid num_replicates=8",
+   "spec": {
+    "rigid_motif": {
+     "input": "3evg_apo.cif",
+     "contig": "30-60, A61-63, 30-60",
+     "conditions": {
+      "C_CRD": { "false": [{ "select": "sel('A/*/[61-63]')" }] },
+      "C_CRDGRP": { "1": [{ "select": "sel('A/*/[61-63]/[N,CA,C,O]')" }] },
+      "C_SEQ": { "true": [{ "select": "sel('A/*/[61-63]')" }] }
+     }
+    }
+   }
+  },
+  "invfold": {
+   "title": "Keep the backbone, change the sequence",
+   "textKey": "example.invfold",
+   "command": "rfd4-generate generation=inverse_folding inputs=design.cif out_dir=./runs/invfold num_replicates=8",
+   "note": "Inverse folding takes a structure straight, with no contig, because the whole backbone is held. The spec below is only here to show the shape.",
+   "spec": {
+    "refold": {
+     "input": "design.cif"
+    }
+   }
+  }
+ }
+}

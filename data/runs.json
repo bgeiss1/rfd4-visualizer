@@ -1,0 +1,33 @@
+{
+ "note": "Captured runs. Each entry is one rfd4-generate run exported by workflow/export_playback.py. Until a run is captured this file lists what is planned, and the pages say so rather than pretending.",
+ "order": ["quickstart", "motif", "binder_3evg"],
+ "runs": {
+  "quickstart": {
+   "title": "The documentation's own example",
+   "what": "The binder from the RFD4 quickstart, run on the input file that ships with the repo. It is here as the canary: it proves the install works and gives us frames to look at before any GPU time goes on a real target.",
+   "captured": false,
+   "planned": {
+    "command": "rfd4-generate inputs=quickstart.yaml out_dir=./runs/quickstart num_replicates=8 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
+    "gpu": 1
+   }
+  },
+  "motif": {
+   "title": "Scaffold a motif",
+   "what": "Three residues held in place while the model builds a protein around them. The classic lesson, and the one where the contig language earns its keep.",
+   "captured": false,
+   "planned": {
+    "command": "rfd4-generate inputs=motif.yaml out_dir=./runs/motif num_replicates=16 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false",
+    "gpu": 1
+   }
+  },
+  "binder_3evg": {
+   "title": "A binder against 3EVG",
+   "what": "Brian's own dengue-2 NS5 methyltransferase, the same target the BindCraft2 site uses, so the two tools can be compared on one structure.",
+   "captured": false,
+   "planned": {
+    "command": "rfd4-generate inputs=binder_3evg.yaml out_dir=./runs/binder_3evg num_replicates=32 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false",
+    "gpu": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read the metrics · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="metrics.title"></h1>
+    <p data-t="metrics.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="metrics.pickTitle"></h2>
+    <div class="seg-inline" id="pick"></div>
+    <p class="small muted" data-t="metrics.off"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="metrics.tableTitle"></h2>
+    <p data-t="metrics.table"></p>
+    <div class="files-view"><table class="grid small" id="table"></table></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="metrics.chartTitle"></h2>
+    <p data-t="metrics.chart"></p>
+    <div class="seg-inline" id="pickCol"></div>
+    <div class="chart-card"><div id="chart"></div></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="metrics.glossaryTitle"></h2>
+    <p data-t="metrics.glossary"></p>
+    <table class="grid small" id="glossary"></table>
+  </section>
+
+  <section class="card">
+    <h2 data-t="metrics.configTitle"></h2>
+    <p data-t="metrics.config"></p>
+    <table class="grid small" id="config"></table>
+  </section>
+</main>
+<script type="module" src="js/pages/metrics.js"></script>
+</body>
+</html>

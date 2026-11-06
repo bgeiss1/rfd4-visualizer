@@ -1,0 +1,15 @@
+# A binder against 3EVG, the dengue-2 NS5 methyltransferase.
+#
+# Unguided: no C_HOT, so the model picks where to bind. That matches how the BindCraft2
+# site ran this target, which is the point, because the two have to be comparable.
+#
+# To aim it at a face instead, add:
+#   C_HOT: {true: [{select: "sel('A/*/[61-63, 80-84]')"}]}
+#
+# A17-131 below is a placeholder. Put the real residue range of your chain A here.
+binder_3evg:
+  input: 3evg_apo.cif
+  contig: "50-120, /0, A17-131"
+  conditions:
+    C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
+    C_SEQ: {true: [{select: "sel('A')"}]}

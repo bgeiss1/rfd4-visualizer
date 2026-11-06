@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Look at the designs · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="designs.title"></h1>
+    <p data-t="designs.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="designs.pickTitle"></h2>
+    <div class="seg-inline" id="pick"></div>
+  </section>
+
+  <section class="work">
+    <div class="viewer-wrap">
+      <div class="viewer" id="viewer"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="panel">
+      <h2 data-t="designs.aboutTitle"></h2>
+      <dl class="readout" id="readout"></dl>
+      <div class="seg-inline" id="styles"></div>
+      <p class="note note" data-t="designs.cif"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="designs.listTitle"></h2>
+    <p data-t="designs.list"></p>
+    <table class="grid small" id="list"></table>
+  </section>
+</main>
+<script type="module" src="js/pages/designs.js"></script>
+</body>
+</html>

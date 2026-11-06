@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Write the command · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="command.title"></h1>
+    <p data-t="command.intro"></p>
+    <p data-t="command.hydra"></p>
+  </section>
+
+  <section class="card">
+    <form class="cmd" id="form" autocomplete="off">
+      <span class="prompt">(rfd4) $</span>
+      <input id="cmd" spellcheck="false" aria-label="The command">
+      <button type="submit" data-t="command.run"></button>
+    </form>
+    <p class="cmd-hint" data-t="command.hint"></p>
+    <div class="seg-inline" id="presets"></div>
+  </section>
+
+  <section class="card" id="whatHappens" hidden>
+    <h2 data-t="command.resultTitle"></h2>
+    <div class="problems" id="problems"></div>
+    <div id="terminal"></div>
+  </section>
+
+  <section class="card" id="effects" hidden>
+    <h2 data-t="command.effectTitle"></h2>
+    <p data-t="command.effect"></p>
+    <div class="problems" id="consequences"></div>
+  </section>
+
+  <section class="card" id="filesCard" hidden>
+    <h2 data-t="command.filesTitle"></h2>
+    <p data-t="command.files"></p>
+    <ul class="files" id="files"></ul>
+    <p class="note warn" data-t="command.hydraOut"></p>
+  </section>
+
+  <section class="card" id="settingsCard" hidden>
+    <h2 data-t="command.settingsTitle"></h2>
+    <p data-t="command.settings"></p>
+    <table class="grid small" id="settings"></table>
+  </section>
+</main>
+<script type="module" src="js/pages/command.js"></script>
+</body>
+</html>

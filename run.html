@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run it · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="run.title"></h1>
+    <p data-t="run.intro"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="run.pickTitle"></h2>
+    <div class="seg-inline" id="pick"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="run.commandTitle"></h2>
+    <p data-t="run.command"></p>
+    <pre class="code" id="command"></pre>
+    <div class="problems" id="consequences"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="run.logTitle"></h2>
+    <p data-t="run.log"></p>
+    <div id="log"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="run.countsTitle"></h2>
+    <p data-t="run.counts"></p>
+    <div id="funnel" class="funnel"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="run.filesTitle"></h2>
+    <p data-t="run.files"></p>
+    <ul class="files" id="files"></ul>
+  </section>
+</main>
+<script type="module" src="js/pages/run.js"></script>
+</body>
+</html>

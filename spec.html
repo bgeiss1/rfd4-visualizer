@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Describe the design · RFD4 Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .spec-grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  @media (max-width: 900px) { .spec-grid { grid-template-columns: minmax(0, 1fr); } }
+  .spec-grid textarea { font: 0.86rem/1.5 var(--font-mono); width: 100%; min-height: 9em; resize: vertical; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+  .contig-in { font: 1rem var(--font-mono); width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+  .chainmap { display: grid; gap: 10px; }
+  .chainrow { display: grid; gap: 4px; }
+  .chainrow .who { font-size: 0.82rem; color: var(--muted); }
+  .segbar { display: flex; gap: 3px; align-items: stretch; min-height: 34px; }
+  .segbar .sg { border-radius: 5px; display: grid; place-items: center; font: 0.74rem var(--font-mono); padding: 4px 6px; text-align: center; }
+  .segbar .sg.keep { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
+  .segbar .sg.make { background: var(--warn-soft); color: var(--warn); border: 1px dashed var(--warn); }
+  .segbar .sg.err { background: var(--bad-soft); color: var(--bad); border: 1px solid var(--bad); }
+  .problems { display: grid; gap: 6px; }
+  .problems p { margin: 0; }
+  .toks { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tok { font: 0.78rem var(--font-mono); padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+  .tok.keep { border-color: var(--accent); color: var(--accent); }
+  .tok.make { border-color: var(--warn); color: var(--warn); }
+  .tok.brk { border-color: var(--muted); color: var(--muted); }
+  .tok.bad { border-color: var(--bad); color: var(--bad); }
+  .examples { display: flex; flex-wrap: wrap; gap: 6px; }
+  .fieldgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  @media (max-width: 700px) { .fieldgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .fieldgrid .f { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+  .fieldgrid .f .n { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .fieldgrid .f .v { font-family: var(--font-mono); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <h1 data-t="spec.title"></h1>
+    <p data-t="spec.intro"></p>
+    <p data-t="spec.why"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="spec.examplesTitle"></h2>
+    <p data-t="spec.examples"></p>
+    <div class="examples seg" id="examples"></div>
+    <p class="small muted" id="exampleNote"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-t="spec.contigTitle"></h2>
+    <p data-t="spec.contig"></p>
+    <label class="small-label" for="contig" data-t="spec.contigLabel"></label>
+    <input class="contig-in" id="contig" spellcheck="false" autocomplete="off">
+    <div class="toks" id="tokens"></div>
+    <div class="chainmap" id="chains"></div>
+    <div class="problems" id="contigProblems"></div>
+    <details>
+      <summary data-t="spec.tokensTitle"></summary>
+      <table class="grid small" id="tokenHelp"></table>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 data-t="spec.condTitle"></h2>
+    <p data-t="spec.cond"></p>
+    <div class="spec-grid">
+      <div>
+        <label class="small-label" for="cond" data-t="spec.condLabel"></label>
+        <textarea id="cond" spellcheck="false"></textarea>
+        <div class="problems" id="condProblems"></div>
+      </div>
+      <div>
+        <label class="small-label" data-t="spec.yamlLabel"></label>
+        <pre class="code" id="yaml"></pre>
+      </div>
+    </div>
+    <details>
+      <summary data-t="spec.condTableTitle"></summary>
+      <table class="grid small" id="condHelp"></table>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 data-t="spec.selTitle"></h2>
+    <p data-t="spec.sel"></p>
+    <label class="small-label" for="sel" data-t="spec.selLabel"></label>
+    <input class="contig-in" id="sel" spellcheck="false" autocomplete="off">
+    <div class="fieldgrid" id="selFields"></div>
+    <div class="problems" id="selProblems"></div>
+    <p class="note warn" data-t="spec.selTrap"></p>
+  </section>
+</main>
+<script type="module" src="js/pages/spec.js"></script>
+</body>
+</html>
