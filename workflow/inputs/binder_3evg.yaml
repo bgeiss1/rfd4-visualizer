@@ -6,10 +6,10 @@
 # To aim it at a face instead, add:
 #   C_HOT: {true: [{select: "sel('A/*/[61-63, 80-84]')"}]}
 #
-# A17-131 below is a placeholder. Put the real residue range of your chain A here.
+# Chain A is residues 8-264, read from the structure itself.
 binder_3evg:
   input: 3evg_apo.cif
-  contig: "50-120, /0, A17-131"
+  contig: "50-120, /0, A8-264"
   conditions:
     C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
     C_SEQ: {true: [{select: "sel('A')"}]}

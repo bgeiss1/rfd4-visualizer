@@ -1,0 +1,11 @@
+# A binder against IL-15, aimed at Face B: the epitope BindCraft2 could not design against
+# at all, 0 accepted out of 200 trajectories. The question is whether RFD4 fails here too,
+# or builds backbones happily that only fall over at refolding.
+# Chain A is residues 17-133, read from the structure itself.
+binder_il15_faceB:
+  input: aj_il15.cif
+  contig: "80-110, /0, A17-133"
+  conditions:
+    C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
+    C_SEQ: {true: [{select: "sel('A')"}]}
+    C_HOT: {true: [{select: "sel('A/*/[21, 24, 25, 27, 28, 122, 125, 128]')"}]}

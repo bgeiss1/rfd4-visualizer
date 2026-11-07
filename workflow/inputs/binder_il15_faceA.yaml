@@ -1,0 +1,10 @@
+# A binder against IL-15, aimed at Face A: the epitope BindCraft2 designed against
+# successfully, 27 accepted out of 200 trajectories.
+# Chain A is residues 17-133, read from the structure itself.
+binder_il15_faceA:
+  input: aj_il15.cif
+  contig: "80-110, /0, A17-133"
+  conditions:
+    C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
+    C_SEQ: {true: [{select: "sel('A')"}]}
+    C_HOT: {true: [{select: "sel('A/*/[43, 58, 62, 63, 65, 66, 88, 104, 106]')"}]}
