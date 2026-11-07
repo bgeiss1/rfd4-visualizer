@@ -1,0 +1,254 @@
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 315.31it/s]
+[2026-11-07 07:47:54,895][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:54,904][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:54,906][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:54,926][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:55,618][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:55,619][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:55,659][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:55,673][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:55,843][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:47:59,003][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 320 tokens (batch size 1). This may take a few minutes.
+This shape may need recompiling in later runs; set TORCH_COMPILE_CACHE_BLOB to a persistent file path to preserve the cache.
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:660'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 660, in _sm90_inference_shape_owner
+    and _sm90_device(device)
+        ^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:1026'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 1026, in _blackwell_public_inference_shape_owner
+    capability = trimul_blackwell_capability(device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2716'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2716, in _owner_call_boundary
+    _sm90_device(x.device) or trimul_blackwell_capability(x.device) is not None
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2716'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2716, in _owner_call_boundary
+    _sm90_device(x.device) or trimul_blackwell_capability(x.device) is not None
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2146'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2146, in _blackwell_inference_contract
+    capability = trimul_blackwell_capability(x.device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm100_inference_torch.py:186'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm100_inference_torch.py", line 186, in route_supported
+    _extension_available()
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm100_inference_torch.py:189'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm100_inference_torch.py", line 189, in route_supported
+    and sm100_device_compatible(x.device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm120_projection_triton.py:135'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm120_projection_triton.py", line 135, in route_supported
+    and sm120_device_compatible(x.device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_output_tail_blackwell_torch.py:391'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_output_tail_blackwell_torch.py", line 391, in route_supported
+    capability = device_capability(x0.device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+[2026-11-07 07:48:38,173][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:48:38,942][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 352 tokens (batch size 1).
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[2026-11-07 07:49:20,004][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:49:39,782][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:49:40,473][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 384 tokens (batch size 1).
+[2026-11-07 07:50:25,037][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:50:43,897][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:51:07,436][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:51:29,790][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:51:46,371][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:52:09,360][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:52:25,400][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:52:41,874][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:53:01,355][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:53:25,088][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:53:48,865][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:54:11,156][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:54:30,195][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:54:47,200][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:55:05,470][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:55:28,327][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:55:47,167][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:56:07,265][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:56:31,272][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:56:50,235][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=4083: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+[rank: 0] Metric key(s) ['refolded_target_backbone_aligned_binder_rmsd.rmsd'] absent from metrics. Treating as indeterminate (not a hard fail).
+crunching... 🔢 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 32/32 0:11:41 • 0:00:00 0.06it/s 
+[2026-11-07 08:01:34,017][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /home/bgeiss/rfd4-visualizer-runs/binder_3evg
+	Command being timed: "bash -c rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/binder_3evg num_replicates=32 seed=1234 metrics_tags='[ppi_refolding]' metrics/refolding_oracles=af2 generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true"
+	User time (seconds): 1244.97
+	System time (seconds): 129.99
+	Percent of CPU this job got: 164%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:55.20
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6647136
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 14640
+	Minor (reclaiming a frame) page faults: 28427432
+	Voluntary context switches: 939196
+	Involuntary context switches: 30302
+	Swaps: 0
+	File system inputs: 1848
+	File system outputs: 3850088
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

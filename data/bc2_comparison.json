@@ -1,3 +1,27 @@
 {
- "note": "BindCraft2 numbers for the same targets, copied across from the BindCraft2 visualizer so the compare page can put them side by side. One key per target, named the same way as the target field on a captured run in runs.json. Example shape: \"3evg_apo\": { \"trajectories\": 40, \"accepted\": 1, \"gpuHours\": 3.4 }."
+  "note": "BindCraft2 numbers for the same targets, copied across from the BindCraft2 visualizer so the compare page can put them side by side. One key per target, named the same way as the target field on a captured run in runs.json. Every figure here was read out of the campaign's own log on UncleBen, not estimated. hours is wall clock for the whole campaign, not GPU hours: the il15_lesson runs had the machine to themselves and used both cards, so wall clock is the honest number and the RFD4 column should be read the same way.",
+  "3evg_apo": {
+    "trajectories": 40,
+    "accepted": 1,
+    "gpuHours": 3.25,
+    "what": "Unguided, no hotspots. BindCraft2's own near miss on this target: one design out of forty."
+  },
+  "il15_unguided": {
+    "trajectories": 200,
+    "accepted": 41,
+    "gpuHours": 2.45,
+    "what": "Unguided. The model picked its own epitope and did well."
+  },
+  "il15_faceA": {
+    "trajectories": 200,
+    "accepted": 27,
+    "gpuHours": 2.4,
+    "what": "Directed at the converged epitope: A43, A58, A62, A63, A65, A66, A88, A104, A106."
+  },
+  "il15_faceB": {
+    "trajectories": 200,
+    "accepted": 0,
+    "gpuHours": 2.12,
+    "what": "Directed at the opposite face: A21, A24, A25, A27, A28, A122, A125, A128. Two hundred attempts, nothing accepted."
+  }
 }

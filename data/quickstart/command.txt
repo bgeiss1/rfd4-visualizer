@@ -1,0 +1,1 @@
+rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/quickstart num_replicates=8 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true

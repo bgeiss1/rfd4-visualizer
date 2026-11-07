@@ -37,13 +37,61 @@ def read_structure_stack(path: Path):
     return get_structure(f)
 
 
-def write_pdb(stack, path: Path) -> int:
+def read_models(path: Path) -> list:
+    """Every model in a CIF, as a list of AtomArrays.
+
+    An RFD4 trajectory changes atom count from frame to frame, because the side chains
+    appear as the sequence is decided. Measured on a real run: 1248 to 1351 atoms across
+    31 frames. A biotite stack needs one atom count for every model, so it refuses the
+    file with "unequal amount of atoms". Reading the models one at a time works.
+    """
+    from biotite.structure.io.pdbx import CIFFile, BinaryCIFFile, get_structure
+
+    f = BinaryCIFFile.read(path) if path.suffix == ".bcif" else CIFFile.read(path)
+    try:
+        stack = get_structure(f)
+        if hasattr(stack, "stack_depth"):
+            return [stack[i] for i in range(stack.stack_depth())]
+        return [stack]
+    except Exception:
+        pass
+    try:
+        numbers = f.block["atom_site"]["pdbx_PDB_model_num"].as_array(int)
+        count = int(max(numbers))
+    except Exception:
+        count = 1
+    models = []
+    for n in range(1, count + 1):
+        try:
+            models.append(get_structure(f, model=n))
+        except Exception as e:
+            print(f"  frame {n} of {path.name} could not be read: {e}")
+    return models
+
+
+def write_pdb(models, path: Path) -> int:
+    """Write the frames as one multi model PDB, which 3Dmol plays back directly.
+
+    Each frame is written on its own and the blocks are concatenated, because the frames do
+    not share an atom count and biotite can only write a stack that does.
+    """
     from biotite.structure.io.pdb import PDBFile
 
-    out = PDBFile()
-    out.set_structure(stack)
-    out.write(path)
-    return stack.stack_depth() if hasattr(stack, "stack_depth") else 1
+    if hasattr(models, "stack_depth"):
+        models = [models[i] for i in range(models.stack_depth())]
+    elif not isinstance(models, list):
+        models = [models]
+
+    lines: list[str] = []
+    for n, arr in enumerate(models, start=1):
+        one = PDBFile()
+        one.set_structure(arr)
+        lines.append(f"MODEL     {n:>4}")
+        lines.extend(l for l in one.lines if l.startswith(("ATOM", "HETATM", "TER")))
+        lines.append("ENDMDL")
+    lines.append("END")
+    path.write_text("\n".join(lines) + "\n")
+    return len(models)
 
 
 def chain_ids(stack) -> list[str]:
@@ -60,6 +108,43 @@ def n_residues(stack) -> int:
 
     arr = stack[0] if hasattr(stack, "stack_depth") else stack
     return int(struc.get_residue_count(arr))
+
+
+def count_passing(metrics: dict) -> int | None:
+    """How many designs met the oracle's own pass criteria.
+
+    A ppi_refolding run writes a ppi.pass column, 1.0 or 0.0 per design. Without an oracle
+    there is no such column and no verdict to give, so this returns None and the site shows
+    a dash rather than a zero, which would read as "all of them failed".
+    """
+    if not metrics:
+        return None
+    columns = [c for c in next(iter(metrics.values())) if c.endswith(".pass")]
+    columns = [c for c in columns if c != "pre_oracle_pass"] or columns
+    if not columns:
+        return None
+    column = columns[0]
+    passed = 0
+    for row in metrics.values():
+        try:
+            passed += 1 if float(row[column]) >= 1 else 0
+        except (KeyError, TypeError, ValueError):
+            continue
+    return passed
+
+
+def wall_hours(log: Path) -> float | None:
+    """Wall clock for the run, from the `/usr/bin/time -v` line the capture script writes."""
+    if not log.exists():
+        return None
+    m = re.search(r"Elapsed \(wall clock\) time.*?:\s*([\d:.]+)", log.read_text(errors="replace"))
+    if not m:
+        return None
+    parts = [float(p) for p in m.group(1).split(":")]
+    seconds = 0.0
+    for p in parts:
+        seconds = seconds * 60 + p
+    return round(seconds / 3600, 3)
 
 
 def save_every(command: str) -> int:
@@ -99,6 +184,11 @@ def main() -> int:
     ap.add_argument("--title", default=None)
     ap.add_argument("--target", default=None, help="a target key, so the compare page can match it to a BindCraft2 campaign")
     ap.add_argument("--max-designs", type=int, default=24, help="how many designs to export structures for")
+    ap.add_argument("--frames-for", type=int, default=6, metavar="N",
+                    help="export trajectory frames for only the N most interesting designs "
+                         "(default 6). Frames are roughly 8 MB a design, so a 32 replicate run "
+                         "would otherwise be a quarter of a gigabyte. The structures and the "
+                         "metrics are still exported for every design. 0 means all of them.")
     args = ap.parse_args()
 
     run_dir: Path = args.run_dir
@@ -127,6 +217,25 @@ def main() -> int:
     frames_total = 0
     every = save_every(command)
 
+    # Which designs get frames. Playing back the one design that actually bound teaches more
+    # than playing back thirty that did not, so when the oracle has ranked them we keep the
+    # best. Without an oracle there is nothing to rank on, so we keep the first few.
+    sample_dirs = sorted(p for p in samples.iterdir() if p.is_dir())
+    if args.frames_for and args.frames_for > 0:
+        def rank(p):
+            row = metrics.get(p.name, {})
+            for key in ("oracle_ppi.iptm_coi", "oracle_ppi.ranking_score", "oracle.iptm"):
+                try:
+                    return -float(row[key])
+                except (KeyError, TypeError, ValueError):
+                    continue
+            return 0.0
+        frames_wanted = {p.name for p in sorted(sample_dirs, key=rank)[: args.frames_for]}
+        print(f"frames for {len(frames_wanted)} of {len(sample_dirs)} design(s): "
+              f"{', '.join(sorted(frames_wanted))}")
+    else:
+        frames_wanted = {p.name for p in sample_dirs}
+
     for d in sorted(p for p in samples.iterdir() if p.is_dir()):
         generated = sorted(d.glob("*_generated.cif")) + sorted(d.glob("*_generated.cif.zst"))
         if not generated:
@@ -149,16 +258,29 @@ def main() -> int:
 
         traj_dir = d / "trajectories"
         traj = sorted(traj_dir.glob("*.cif")) if traj_dir.is_dir() else []
-        if traj:
+        # RFD4 writes two trajectories per design: _x1 is the model's guess at the answer
+        # at each step, _xt the noisy state it was handed. Name them rather than trusting
+        # the sort order.
+        if design_id not in frames_wanted:
+            traj = []
+        clean = next((p for p in traj if "_x1" in p.stem), traj[0] if traj else None)
+        noisy = next((p for p in traj if "_xt" in p.stem), None)
+        if clean is not None:
             try:
-                stack = read_structure_stack(traj[0])
                 (dest / design_id).mkdir(exist_ok=True)
-                n = write_pdb(stack, dest / design_id / "frames.pdb")
+                n = write_pdb(read_models(clean), dest / design_id / "frames.pdb")
                 entry["frames"] = f"data/{args.name}/{design_id}/frames.pdb"
                 entry["nframes"] = n
                 frames_total += n
             except Exception as e:
                 print(f"could not convert the trajectory for {design_id}: {e}")
+        if noisy is not None:
+            try:
+                (dest / design_id).mkdir(exist_ok=True)
+                write_pdb(read_models(noisy), dest / design_id / "frames_noisy.pdb")
+                entry["framesNoisy"] = f"data/{args.name}/{design_id}/frames_noisy.pdb"
+            except Exception as e:
+                print(f"could not convert the noisy trajectory for {design_id}: {e}")
         elif traj_dir.is_dir():
             xtc = list(traj_dir.glob("*.xtc"))
             if xtc:
@@ -197,7 +319,12 @@ def main() -> int:
                 "written": len(designs),
                 "frames": frames_total,
                 "scored": len(metrics) or None,
+                # RFD4's own verdict, not a bar invented here. A ppi_refolding run writes
+                # ppi.pass; other tags write their own. None of them exists without an
+                # oracle, and then there is no verdict to report.
+                "passing": count_passing(metrics),
             },
+            "gpuHours": wall_hours(dest / "run.log"),
             "log": f"data/{args.name}/run.log" if (dest / "run.log").exists() else None,
             "metrics": f"data/{args.name}/per_example_metrics.csv" if (dest / "per_example_metrics.csv").exists() else None,
             "designsList": designs,
@@ -213,8 +340,13 @@ def main() -> int:
     print(f"copy {dest} into the site's data/ folder, then paste the contents of")
     print(f"{dest / 'runs-fragment.json'} into the site's data/runs.json under \"runs\"")
     if not frames_total:
-        print("\nNo frames were exported. If you wanted playback, the run needed")
-        print("  generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false")
+        # Two different problems, and telling them apart saves a wasted rerun.
+        if any((p / "trajectories").is_dir() for p in samples.iterdir() if p.is_dir()):
+            print("\nNo frames were exported, but the run did save trajectories. So the flags")
+            print("were set and something went wrong converting them. Read the errors above.")
+        else:
+            print("\nNo frames were exported, and the run saved no trajectories at all. It needed")
+            print("  generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false")
     return 0
 
 

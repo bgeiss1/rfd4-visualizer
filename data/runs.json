@@ -1,15 +1,476 @@
 {
  "note": "Captured runs. Each entry is one rfd4-generate run exported by workflow/export_playback.py. Until a run is captured this file lists what is planned, and the pages say so rather than pretending.",
- "order": ["quickstart", "motif", "binder_3evg"],
+ "order": [
+  "quickstart",
+  "binder_3evg",
+  "binder_il15_faceA",
+  "binder_il15_faceB"
+ ],
  "runs": {
   "quickstart": {
    "title": "The documentation's own example",
    "what": "The binder from the RFD4 quickstart, run on the input file that ships with the repo. It is here as the canary: it proves the install works and gives us frames to look at before any GPU time goes on a real target.",
-   "captured": false,
-   "planned": {
-    "command": "rfd4-generate inputs=quickstart.yaml out_dir=./runs/quickstart num_replicates=8 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
-    "gpu": 1
-   }
+   "captured": true,
+   "command": "rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/quickstart num_replicates=8 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
+   "nsteps": 60,
+   "saveEvery": 2,
+   "designs": 8,
+   "frames": 124,
+   "counts": {
+    "requested": 8,
+    "written": 8,
+    "frames": 124,
+    "scored": 8
+   },
+   "gpuHours": 0.054,
+   "log": "data/quickstart/run.log",
+   "metrics": "data/quickstart/per_example_metrics.csv",
+   "designsList": [
+    {
+     "id": "binder_0",
+     "path": "data/quickstart/binder_0.cif",
+     "length": 166,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/quickstart/binder_0/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/quickstart/binder_0/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_0/binder_0_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "166.0",
+      "amino_acid_composition.ala_fraction": "0.0602",
+      "amino_acid_composition.val_fraction": "0.0723",
+      "amino_acid_composition.gly_fraction": "0.0422",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.2651",
+      "sse_distribution.sheet_fraction": "0.2771",
+      "sse_distribution.loop_fraction": "0.4578",
+      "sse_distribution.num_ss_elements": "21.0",
+      "sse_distribution.helix_fraction_coi": "0.8627",
+      "sse_distribution.sheet_fraction_coi": "0.0",
+      "sse_distribution.loop_fraction_coi": "0.1373",
+      "sse_distribution.num_ss_elements_coi": "7.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_1",
+     "path": "data/quickstart/binder_1.cif",
+     "length": 194,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/quickstart/binder_1/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/quickstart/binder_1/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_1/binder_1_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "194.0",
+      "amino_acid_composition.ala_fraction": "0.0722",
+      "amino_acid_composition.val_fraction": "0.1186",
+      "amino_acid_composition.gly_fraction": "0.0567",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.0",
+      "sse_distribution.sheet_fraction": "0.433",
+      "sse_distribution.loop_fraction": "0.567",
+      "sse_distribution.num_ss_elements": "27.0",
+      "sse_distribution.helix_fraction_coi": "0.0",
+      "sse_distribution.sheet_fraction_coi": "0.4937",
+      "sse_distribution.loop_fraction_coi": "0.5063",
+      "sse_distribution.num_ss_elements_coi": "13.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_2",
+     "path": "data/quickstart/binder_2.cif",
+     "length": 200,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/quickstart/binder_2/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/quickstart/binder_2/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_2/binder_2_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "200.0",
+      "amino_acid_composition.ala_fraction": "0.09",
+      "amino_acid_composition.val_fraction": "0.08",
+      "amino_acid_composition.gly_fraction": "0.035",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.345",
+      "sse_distribution.sheet_fraction": "0.23",
+      "sse_distribution.loop_fraction": "0.425",
+      "sse_distribution.num_ss_elements": "23.0",
+      "sse_distribution.helix_fraction_coi": "0.8118",
+      "sse_distribution.sheet_fraction_coi": "0.0",
+      "sse_distribution.loop_fraction_coi": "0.1882",
+      "sse_distribution.num_ss_elements_coi": "9.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_3",
+     "path": "data/quickstart/binder_3.cif",
+     "length": 223,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/quickstart/binder_3/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/quickstart/binder_3/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_3/binder_3_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "223.0",
+      "amino_acid_composition.ala_fraction": "0.0717",
+      "amino_acid_composition.val_fraction": "0.0807",
+      "amino_acid_composition.gly_fraction": "0.0404",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.0",
+      "sse_distribution.sheet_fraction": "0.4664",
+      "sse_distribution.loop_fraction": "0.5336",
+      "sse_distribution.num_ss_elements": "35.0",
+      "sse_distribution.helix_fraction_coi": "0.0",
+      "sse_distribution.sheet_fraction_coi": "0.5463",
+      "sse_distribution.loop_fraction_coi": "0.4537",
+      "sse_distribution.num_ss_elements_coi": "21.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_4",
+     "path": "data/quickstart/binder_4.cif",
+     "length": 188,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_4/binder_4_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "188.0",
+      "amino_acid_composition.ala_fraction": "0.0638",
+      "amino_acid_composition.val_fraction": "0.0851",
+      "amino_acid_composition.gly_fraction": "0.0319",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.3191",
+      "sse_distribution.sheet_fraction": "0.2394",
+      "sse_distribution.loop_fraction": "0.4415",
+      "sse_distribution.num_ss_elements": "23.0",
+      "sse_distribution.helix_fraction_coi": "0.8219",
+      "sse_distribution.sheet_fraction_coi": "0.0",
+      "sse_distribution.loop_fraction_coi": "0.1781",
+      "sse_distribution.num_ss_elements_coi": "9.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_5",
+     "path": "data/quickstart/binder_5.cif",
+     "length": 224,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_5/binder_5_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "224.0",
+      "amino_acid_composition.ala_fraction": "0.0625",
+      "amino_acid_composition.val_fraction": "0.0848",
+      "amino_acid_composition.gly_fraction": "0.067",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.0",
+      "sse_distribution.sheet_fraction": "0.375",
+      "sse_distribution.loop_fraction": "0.625",
+      "sse_distribution.num_ss_elements": "27.0",
+      "sse_distribution.helix_fraction_coi": "0.0",
+      "sse_distribution.sheet_fraction_coi": "0.3578",
+      "sse_distribution.loop_fraction_coi": "0.6422",
+      "sse_distribution.num_ss_elements_coi": "13.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_6",
+     "path": "data/quickstart/binder_6.cif",
+     "length": 212,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_6/binder_6_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "212.0",
+      "amino_acid_composition.ala_fraction": "0.0613",
+      "amino_acid_composition.val_fraction": "0.1132",
+      "amino_acid_composition.gly_fraction": "0.0472",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.0",
+      "sse_distribution.sheet_fraction": "0.4292",
+      "sse_distribution.loop_fraction": "0.5708",
+      "sse_distribution.num_ss_elements": "29.0",
+      "sse_distribution.helix_fraction_coi": "0.0",
+      "sse_distribution.sheet_fraction_coi": "0.4639",
+      "sse_distribution.loop_fraction_coi": "0.5361",
+      "sse_distribution.num_ss_elements_coi": "15.0",
+      "pre_oracle_pass": "1.0"
+     }
+    },
+    {
+     "id": "binder_7",
+     "path": "data/quickstart/binder_7.cif",
+     "length": 173,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples/binder_7/binder_7_generated.cif",
+      "task": "binder",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/quickstart/inference_samples",
+      "metrics_tags": "design",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "173.0",
+      "amino_acid_composition.ala_fraction": "0.0751",
+      "amino_acid_composition.val_fraction": "0.0925",
+      "amino_acid_composition.gly_fraction": "0.0462",
+      "bond_length_metrics.bond_length.frac_unreasonable": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.within_residue": "0.0",
+      "bond_length_metrics.bond_length.frac_unreasonable.between_residue.within_chain": "0.0",
+      "clash_metrics.frac_atoms_clashing_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_intra_residue_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_polymer_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_polymer_ligand_1p5A": "0.0",
+      "clash_metrics.frac_atoms_clashing_inter_residue_ligand_ligand_1p5A": "0.0",
+      "sequence_adherence.sequence_adherence": "1.0",
+      "sequence_adherence.n_violations": "0.0",
+      "sequence_probability_adherence.zero_adherence": "1.0",
+      "sequence_probability_adherence.one_adherence": "1.0",
+      "sequence_probability_adherence.n_zero_conditions": "3105.0",
+      "sequence_probability_adherence.n_zero_violations": "0.0",
+      "sequence_probability_adherence.n_one_conditions": "115.0",
+      "sequence_probability_adherence.n_one_violations": "0.0",
+      "sse_distribution.helix_fraction": "0.2832",
+      "sse_distribution.sheet_fraction": "0.2659",
+      "sse_distribution.loop_fraction": "0.4509",
+      "sse_distribution.num_ss_elements": "23.0",
+      "sse_distribution.helix_fraction_coi": "0.8448",
+      "sse_distribution.sheet_fraction_coi": "0.0",
+      "sse_distribution.loop_fraction_coi": "0.1552",
+      "sse_distribution.num_ss_elements_coi": "9.0",
+      "pre_oracle_pass": "1.0"
+     }
+    }
+   ]
   },
   "motif": {
    "title": "Scaffold a motif",
@@ -22,12 +483,3606 @@
   },
   "binder_3evg": {
    "title": "A binder against 3EVG",
-   "what": "Brian's own dengue-2 NS5 methyltransferase, the same target the BindCraft2 site uses, so the two tools can be compared on one structure.",
-   "captured": false,
-   "planned": {
-    "command": "rfd4-generate inputs=binder_3evg.yaml out_dir=./runs/binder_3evg num_replicates=32 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false",
-    "gpu": 1
-   }
+   "what": "The same dengue-2 NS5 methyltransferase the BindCraft2 site uses, run unguided so the model picks its own epitope. Thirty two designs, and the oracle likes none of them.",
+   "captured": true,
+   "command": "rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/binder_3evg num_replicates=32 seed=1234 metrics_tags='[ppi_refolding]' metrics/refolding_oracles=af2 generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
+   "nsteps": 60,
+   "saveEvery": 2,
+   "designs": 24,
+   "frames": 93,
+   "counts": {
+    "requested": 32,
+    "written": 24,
+    "frames": 93,
+    "scored": 32,
+    "passing": 0
+   },
+   "gpuHours": 0.232,
+   "log": "data/binder_3evg/run.log",
+   "metrics": "data/binder_3evg/per_example_metrics.csv",
+   "designsList": [
+    {
+     "id": "binder_3evg_0",
+     "path": "data/binder_3evg/binder_3evg_0.cif",
+     "length": 308,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_0/binder_3evg_0_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "308.0",
+      "amino_acid_composition.ala_fraction": "0.0325",
+      "amino_acid_composition.val_fraction": "0.0747",
+      "amino_acid_composition.gly_fraction": "0.0844",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.82",
+      "oracle_ppi.overall_pae": "23.2133",
+      "oracle_ppi.overall_ptm": "24.39",
+      "oracle_ppi.overall_iptm": "10.53",
+      "oracle_ppi.ranking_score": "0.133",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.7734",
+      "oracle_ppi.iptm_B_1_A_1": "10.53",
+      "oracle_ppi.plddt_coi": "74.94",
+      "oracle_ppi.ptm_coi": "75.67",
+      "oracle_ppi.pae_coi": "2.0075",
+      "oracle_ppi.ipae_coi": "26.4788",
+      "oracle_ppi.min_ipae_coi": "20.7734",
+      "oracle_ppi.iptm_coi": "10.53",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_0/binder_3evg_0_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_0/binder_3evg_0_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.1719",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_0_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_1",
+     "path": "data/binder_3evg/binder_3evg_1.cif",
+     "length": 336,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_1/binder_3evg_1_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "336.0",
+      "amino_acid_composition.ala_fraction": "0.0357",
+      "amino_acid_composition.val_fraction": "0.0863",
+      "amino_acid_composition.gly_fraction": "0.0863",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "45.75",
+      "oracle_ppi.overall_pae": "24.0229",
+      "oracle_ppi.overall_ptm": "28.27",
+      "oracle_ppi.overall_iptm": "8.4",
+      "oracle_ppi.ranking_score": "0.1238",
+      "oracle_ppi.min_ipae_B_1_A_1": "24.414",
+      "oracle_ppi.iptm_B_1_A_1": "8.41",
+      "oracle_ppi.plddt_coi": "84.67",
+      "oracle_ppi.ptm_coi": "83.79",
+      "oracle_ppi.pae_coi": "2.4613",
+      "oracle_ppi.ipae_coi": "28.4774",
+      "oracle_ppi.min_ipae_coi": "24.414",
+      "oracle_ppi.iptm_coi": "8.41",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_1/binder_3evg_1_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_1/binder_3evg_1_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "21.6416",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_1_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_10",
+     "path": "data/binder_3evg/binder_3evg_10.cif",
+     "length": 313,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_10/binder_3evg_10_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "313.0",
+      "amino_acid_composition.ala_fraction": "0.0447",
+      "amino_acid_composition.val_fraction": "0.0735",
+      "amino_acid_composition.gly_fraction": "0.0863",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "41.96",
+      "oracle_ppi.overall_pae": "23.3875",
+      "oracle_ppi.overall_ptm": "24.63",
+      "oracle_ppi.overall_iptm": "10.31",
+      "oracle_ppi.ranking_score": "0.1317",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.6562",
+      "oracle_ppi.iptm_B_1_A_1": "10.31",
+      "oracle_ppi.plddt_coi": "71.23",
+      "oracle_ppi.ptm_coi": "74.51",
+      "oracle_ppi.pae_coi": "3.1204",
+      "oracle_ppi.ipae_coi": "26.739",
+      "oracle_ppi.min_ipae_coi": "20.6562",
+      "oracle_ppi.iptm_coi": "10.31",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_10/binder_3evg_10_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_10/binder_3evg_10_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "24.7647",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_10_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_11",
+     "path": "data/binder_3evg/binder_3evg_11.cif",
+     "length": 335,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_11/binder_3evg_11_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "335.0",
+      "amino_acid_composition.ala_fraction": "0.0269",
+      "amino_acid_composition.val_fraction": "0.0896",
+      "amino_acid_composition.gly_fraction": "0.0836",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "44.05",
+      "oracle_ppi.overall_pae": "23.7665",
+      "oracle_ppi.overall_ptm": "28.71",
+      "oracle_ppi.overall_iptm": "10.57",
+      "oracle_ppi.ranking_score": "0.1419",
+      "oracle_ppi.min_ipae_B_1_A_1": "21.414",
+      "oracle_ppi.iptm_B_1_A_1": "10.57",
+      "oracle_ppi.plddt_coi": "74.65",
+      "oracle_ppi.ptm_coi": "76.74",
+      "oracle_ppi.pae_coi": "4.1305",
+      "oracle_ppi.ipae_coi": "27.215",
+      "oracle_ppi.min_ipae_coi": "21.414",
+      "oracle_ppi.iptm_coi": "10.57",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_11/binder_3evg_11_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_11/binder_3evg_11_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.4348",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_11_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_12",
+     "path": "data/binder_3evg/binder_3evg_12.cif",
+     "length": 368,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_12/binder_3evg_12_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "368.0",
+      "amino_acid_composition.ala_fraction": "0.0462",
+      "amino_acid_composition.val_fraction": "0.0815",
+      "amino_acid_composition.gly_fraction": "0.1087",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "33.3",
+      "oracle_ppi.overall_pae": "25.2858",
+      "oracle_ppi.overall_ptm": "18.38",
+      "oracle_ppi.overall_iptm": "8.31",
+      "oracle_ppi.ranking_score": "0.1033",
+      "oracle_ppi.min_ipae_B_1_A_1": "25.4532",
+      "oracle_ppi.iptm_B_1_A_1": "8.31",
+      "oracle_ppi.plddt_coi": "31.71",
+      "oracle_ppi.ptm_coi": "23.05",
+      "oracle_ppi.pae_coi": "18.3956",
+      "oracle_ppi.ipae_coi": "29.1356",
+      "oracle_ppi.min_ipae_coi": "25.4532",
+      "oracle_ppi.iptm_coi": "8.31",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_12/binder_3evg_12_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_12/binder_3evg_12_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.8695",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_12_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_13",
+     "path": "data/binder_3evg/binder_3evg_13.cif",
+     "length": 368,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_13/binder_3evg_13_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "368.0",
+      "amino_acid_composition.ala_fraction": "0.0462",
+      "amino_acid_composition.val_fraction": "0.087",
+      "amino_acid_composition.gly_fraction": "0.0951",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "34.33",
+      "oracle_ppi.overall_pae": "25.091",
+      "oracle_ppi.overall_ptm": "18.21",
+      "oracle_ppi.overall_iptm": "8.22",
+      "oracle_ppi.ranking_score": "0.1022",
+      "oracle_ppi.min_ipae_B_1_A_1": "25.2344",
+      "oracle_ppi.iptm_B_1_A_1": "8.22",
+      "oracle_ppi.plddt_coi": "32.38",
+      "oracle_ppi.ptm_coi": "25.78",
+      "oracle_ppi.pae_coi": "18.1237",
+      "oracle_ppi.ipae_coi": "28.9574",
+      "oracle_ppi.min_ipae_coi": "25.2344",
+      "oracle_ppi.iptm_coi": "8.22",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_13/binder_3evg_13_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_13/binder_3evg_13_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.4783",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_13_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_14",
+     "path": "data/binder_3evg/binder_3evg_14.cif",
+     "length": 353,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_14/binder_3evg_14_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "353.0",
+      "amino_acid_composition.ala_fraction": "0.0368",
+      "amino_acid_composition.val_fraction": "0.085",
+      "amino_acid_composition.gly_fraction": "0.0963",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "32.9",
+      "oracle_ppi.overall_pae": "25.0849",
+      "oracle_ppi.overall_ptm": "18.07",
+      "oracle_ppi.overall_iptm": "8.33",
+      "oracle_ppi.ranking_score": "0.1027",
+      "oracle_ppi.min_ipae_B_1_A_1": "24.1562",
+      "oracle_ppi.iptm_B_1_A_1": "8.33",
+      "oracle_ppi.plddt_coi": "30.35",
+      "oracle_ppi.ptm_coi": "17.77",
+      "oracle_ppi.pae_coi": "18.2614",
+      "oracle_ppi.ipae_coi": "28.7776",
+      "oracle_ppi.min_ipae_coi": "24.1562",
+      "oracle_ppi.iptm_coi": "8.33",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_14/binder_3evg_14_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_14/binder_3evg_14_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.7395",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_14_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_15",
+     "path": "data/binder_3evg/binder_3evg_15.cif",
+     "length": 330,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_15/binder_3evg_15_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "330.0",
+      "amino_acid_composition.ala_fraction": "0.0303",
+      "amino_acid_composition.val_fraction": "0.0818",
+      "amino_acid_composition.gly_fraction": "0.0818",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "43.59",
+      "oracle_ppi.overall_pae": "23.9196",
+      "oracle_ppi.overall_ptm": "26.44",
+      "oracle_ppi.overall_iptm": "8.56",
+      "oracle_ppi.ranking_score": "0.1213",
+      "oracle_ppi.min_ipae_B_1_A_1": "23.625",
+      "oracle_ppi.iptm_B_1_A_1": "8.56",
+      "oracle_ppi.plddt_coi": "73.54",
+      "oracle_ppi.ptm_coi": "73.75",
+      "oracle_ppi.pae_coi": "4.3523",
+      "oracle_ppi.ipae_coi": "27.9819",
+      "oracle_ppi.min_ipae_coi": "23.625",
+      "oracle_ppi.iptm_coi": "8.56",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_15/binder_3evg_15_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_15/binder_3evg_15_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.162",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_15_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_16",
+     "path": "data/binder_3evg/binder_3evg_16.cif",
+     "length": 320,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_16/binder_3evg_16_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "320.0",
+      "amino_acid_composition.ala_fraction": "0.0406",
+      "amino_acid_composition.val_fraction": "0.0812",
+      "amino_acid_composition.gly_fraction": "0.1",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "45.41",
+      "oracle_ppi.overall_pae": "24.1053",
+      "oracle_ppi.overall_ptm": "25.02",
+      "oracle_ppi.overall_iptm": "8.58",
+      "oracle_ppi.ranking_score": "0.1187",
+      "oracle_ppi.min_ipae_B_1_A_1": "22.4844",
+      "oracle_ppi.iptm_B_1_A_1": "8.58",
+      "oracle_ppi.plddt_coi": "81.26",
+      "oracle_ppi.ptm_coi": "77.7",
+      "oracle_ppi.pae_coi": "2.5612",
+      "oracle_ppi.ipae_coi": "27.8349",
+      "oracle_ppi.min_ipae_coi": "22.4844",
+      "oracle_ppi.iptm_coi": "8.58",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_16/binder_3evg_16_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_16/binder_3evg_16_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "21.5915",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_16_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_17",
+     "path": "data/binder_3evg/binder_3evg_17.cif",
+     "length": 323,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_17/binder_3evg_17_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "323.0",
+      "amino_acid_composition.ala_fraction": "0.0279",
+      "amino_acid_composition.val_fraction": "0.0743",
+      "amino_acid_composition.gly_fraction": "0.0929",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.29",
+      "oracle_ppi.overall_pae": "24.1078",
+      "oracle_ppi.overall_ptm": "25.34",
+      "oracle_ppi.overall_iptm": "8.52",
+      "oracle_ppi.ranking_score": "0.1188",
+      "oracle_ppi.min_ipae_B_1_A_1": "22.9766",
+      "oracle_ppi.iptm_B_1_A_1": "8.52",
+      "oracle_ppi.plddt_coi": "78.25",
+      "oracle_ppi.ptm_coi": "73.29",
+      "oracle_ppi.pae_coi": "2.9272",
+      "oracle_ppi.ipae_coi": "28.0129",
+      "oracle_ppi.min_ipae_coi": "22.9766",
+      "oracle_ppi.iptm_coi": "8.52",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_17/binder_3evg_17_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_17/binder_3evg_17_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "21.3369",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_17_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_18",
+     "path": "data/binder_3evg/binder_3evg_18.cif",
+     "length": 358,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_18/binder_3evg_18_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "358.0",
+      "amino_acid_composition.ala_fraction": "0.0447",
+      "amino_acid_composition.val_fraction": "0.0866",
+      "amino_acid_composition.gly_fraction": "0.0838",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "48.41",
+      "oracle_ppi.overall_pae": "23.8063",
+      "oracle_ppi.overall_ptm": "33.11",
+      "oracle_ppi.overall_iptm": "9.72",
+      "oracle_ppi.ranking_score": "0.1439",
+      "oracle_ppi.min_ipae_B_1_A_1": "23.8047",
+      "oracle_ppi.iptm_B_1_A_1": "9.72",
+      "oracle_ppi.plddt_coi": "85.24",
+      "oracle_ppi.ptm_coi": "84.64",
+      "oracle_ppi.pae_coi": "2.9904",
+      "oracle_ppi.ipae_coi": "28.0973",
+      "oracle_ppi.min_ipae_coi": "23.8047",
+      "oracle_ppi.iptm_coi": "9.72",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_18/binder_3evg_18_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_18/binder_3evg_18_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "24.7808",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_18_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_19",
+     "path": "data/binder_3evg/binder_3evg_19.cif",
+     "length": 328,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_3evg/binder_3evg_19/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_3evg/binder_3evg_19/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_19/binder_3evg_19_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "328.0",
+      "amino_acid_composition.ala_fraction": "0.0366",
+      "amino_acid_composition.val_fraction": "0.0732",
+      "amino_acid_composition.gly_fraction": "0.0823",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "40.18",
+      "oracle_ppi.overall_pae": "23.4833",
+      "oracle_ppi.overall_ptm": "27.51",
+      "oracle_ppi.overall_iptm": "12.04",
+      "oracle_ppi.ranking_score": "0.1514",
+      "oracle_ppi.min_ipae_B_1_A_1": "18.0078",
+      "oracle_ppi.iptm_B_1_A_1": "12.04",
+      "oracle_ppi.plddt_coi": "63.11",
+      "oracle_ppi.ptm_coi": "67.31",
+      "oracle_ppi.pae_coi": "4.0346",
+      "oracle_ppi.ipae_coi": "26.4452",
+      "oracle_ppi.min_ipae_coi": "18.0078",
+      "oracle_ppi.iptm_coi": "12.04",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_19/binder_3evg_19_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_19/binder_3evg_19_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.7411",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_19_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_2",
+     "path": "data/binder_3evg/binder_3evg_2.cif",
+     "length": 342,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_2/binder_3evg_2_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "342.0",
+      "amino_acid_composition.ala_fraction": "0.038",
+      "amino_acid_composition.val_fraction": "0.0877",
+      "amino_acid_composition.gly_fraction": "0.0877",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "43.85",
+      "oracle_ppi.overall_pae": "23.7805",
+      "oracle_ppi.overall_ptm": "29.39",
+      "oracle_ppi.overall_iptm": "9.56",
+      "oracle_ppi.ranking_score": "0.1353",
+      "oracle_ppi.min_ipae_B_1_A_1": "21.8203",
+      "oracle_ppi.iptm_B_1_A_1": "9.56",
+      "oracle_ppi.plddt_coi": "74.15",
+      "oracle_ppi.ptm_coi": "76.83",
+      "oracle_ppi.pae_coi": "4.6796",
+      "oracle_ppi.ipae_coi": "27.671",
+      "oracle_ppi.min_ipae_coi": "21.8203",
+      "oracle_ppi.iptm_coi": "9.56",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_2/binder_3evg_2_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_2/binder_3evg_2_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "18.0575",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_2_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_20",
+     "path": "data/binder_3evg/binder_3evg_20.cif",
+     "length": 341,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_20/binder_3evg_20_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "341.0",
+      "amino_acid_composition.ala_fraction": "0.0499",
+      "amino_acid_composition.val_fraction": "0.0762",
+      "amino_acid_composition.gly_fraction": "0.0821",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "45.09",
+      "oracle_ppi.overall_pae": "24.2308",
+      "oracle_ppi.overall_ptm": "27.61",
+      "oracle_ppi.overall_iptm": "7.62",
+      "oracle_ppi.ranking_score": "0.1162",
+      "oracle_ppi.min_ipae_B_1_A_1": "25.5312",
+      "oracle_ppi.iptm_B_1_A_1": "7.62",
+      "oracle_ppi.plddt_coi": "75.49",
+      "oracle_ppi.ptm_coi": "77.84",
+      "oracle_ppi.pae_coi": "4.6527",
+      "oracle_ppi.ipae_coi": "28.946",
+      "oracle_ppi.min_ipae_coi": "25.5312",
+      "oracle_ppi.iptm_coi": "7.62",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_20/binder_3evg_20_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_20/binder_3evg_20_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "20.88",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_20_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_21",
+     "path": "data/binder_3evg/binder_3evg_21.cif",
+     "length": 369,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_21/binder_3evg_21_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "369.0",
+      "amino_acid_composition.ala_fraction": "0.0515",
+      "amino_acid_composition.val_fraction": "0.103",
+      "amino_acid_composition.gly_fraction": "0.0894",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "40.28",
+      "oracle_ppi.overall_pae": "24.349",
+      "oracle_ppi.overall_ptm": "26.56",
+      "oracle_ppi.overall_iptm": "10.52",
+      "oracle_ppi.ranking_score": "0.1373",
+      "oracle_ppi.min_ipae_B_1_A_1": "22.7344",
+      "oracle_ppi.iptm_B_1_A_1": "10.52",
+      "oracle_ppi.plddt_coi": "52.1",
+      "oracle_ppi.ptm_coi": "49.97",
+      "oracle_ppi.pae_coi": "11.0472",
+      "oracle_ppi.ipae_coi": "28.2232",
+      "oracle_ppi.min_ipae_coi": "22.7344",
+      "oracle_ppi.iptm_coi": "10.52",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_21/binder_3evg_21_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_21/binder_3evg_21_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.0819",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_21_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_22",
+     "path": "data/binder_3evg/binder_3evg_22.cif",
+     "length": 331,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_3evg/binder_3evg_22/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_3evg/binder_3evg_22/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_22/binder_3evg_22_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "331.0",
+      "amino_acid_composition.ala_fraction": "0.0363",
+      "amino_acid_composition.val_fraction": "0.0755",
+      "amino_acid_composition.gly_fraction": "0.0846",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "44.36",
+      "oracle_ppi.overall_pae": "23.2446",
+      "oracle_ppi.overall_ptm": "29.49",
+      "oracle_ppi.overall_iptm": "11.06",
+      "oracle_ppi.ranking_score": "0.1475",
+      "oracle_ppi.min_ipae_B_1_A_1": "18.8125",
+      "oracle_ppi.iptm_B_1_A_1": "11.06",
+      "oracle_ppi.plddt_coi": "80.71",
+      "oracle_ppi.ptm_coi": "82.39",
+      "oracle_ppi.pae_coi": "2.2818",
+      "oracle_ppi.ipae_coi": "26.6759",
+      "oracle_ppi.min_ipae_coi": "18.8125",
+      "oracle_ppi.iptm_coi": "11.06",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_22/binder_3evg_22_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_22/binder_3evg_22_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.5082",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_22_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_23",
+     "path": "data/binder_3evg/binder_3evg_23.cif",
+     "length": 343,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_23/binder_3evg_23_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "343.0",
+      "amino_acid_composition.ala_fraction": "0.0379",
+      "amino_acid_composition.val_fraction": "0.0729",
+      "amino_acid_composition.gly_fraction": "0.0875",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "44.55",
+      "oracle_ppi.overall_pae": "23.835",
+      "oracle_ppi.overall_ptm": "29.69",
+      "oracle_ppi.overall_iptm": "9.84",
+      "oracle_ppi.ranking_score": "0.1381",
+      "oracle_ppi.min_ipae_B_1_A_1": "22.3203",
+      "oracle_ppi.iptm_B_1_A_1": "9.85",
+      "oracle_ppi.plddt_coi": "75.15",
+      "oracle_ppi.ptm_coi": "77.6",
+      "oracle_ppi.pae_coi": "4.5515",
+      "oracle_ppi.ipae_coi": "27.6698",
+      "oracle_ppi.min_ipae_coi": "22.3203",
+      "oracle_ppi.iptm_coi": "9.85",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_23/binder_3evg_23_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_23/binder_3evg_23_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.332",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_23_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_24",
+     "path": "data/binder_3evg/binder_3evg_24.cif",
+     "length": 316,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_24/binder_3evg_24_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "316.0",
+      "amino_acid_composition.ala_fraction": "0.1044",
+      "amino_acid_composition.val_fraction": "0.0665",
+      "amino_acid_composition.gly_fraction": "0.0823",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "43.76",
+      "oracle_ppi.overall_pae": "23.6368",
+      "oracle_ppi.overall_ptm": "24.9",
+      "oracle_ppi.overall_iptm": "9.88",
+      "oracle_ppi.ranking_score": "0.1289",
+      "oracle_ppi.min_ipae_B_1_A_1": "21.5078",
+      "oracle_ppi.iptm_B_1_A_1": "9.88",
+      "oracle_ppi.plddt_coi": "76.66",
+      "oracle_ppi.ptm_coi": "71.55",
+      "oracle_ppi.pae_coi": "2.956",
+      "oracle_ppi.ipae_coi": "27.5997",
+      "oracle_ppi.min_ipae_coi": "21.5078",
+      "oracle_ppi.iptm_coi": "9.88",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_24/binder_3evg_24_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_24/binder_3evg_24_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.5649",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_24_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_25",
+     "path": "data/binder_3evg/binder_3evg_25.cif",
+     "length": 313,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_25/binder_3evg_25_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "313.0",
+      "amino_acid_composition.ala_fraction": "0.0351",
+      "amino_acid_composition.val_fraction": "0.0799",
+      "amino_acid_composition.gly_fraction": "0.0863",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.17",
+      "oracle_ppi.overall_pae": "23.4458",
+      "oracle_ppi.overall_ptm": "24.48",
+      "oracle_ppi.overall_iptm": "10.52",
+      "oracle_ppi.ranking_score": "0.1331",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.8828",
+      "oracle_ppi.iptm_B_1_A_1": "10.52",
+      "oracle_ppi.plddt_coi": "72.16",
+      "oracle_ppi.ptm_coi": "70.73",
+      "oracle_ppi.pae_coi": "3.9773",
+      "oracle_ppi.ipae_coi": "26.7052",
+      "oracle_ppi.min_ipae_coi": "20.8828",
+      "oracle_ppi.iptm_coi": "10.52",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_25/binder_3evg_25_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_25/binder_3evg_25_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "22.4202",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_25_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_26",
+     "path": "data/binder_3evg/binder_3evg_26.cif",
+     "length": 309,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_26/binder_3evg_26_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "309.0",
+      "amino_acid_composition.ala_fraction": "0.0356",
+      "amino_acid_composition.val_fraction": "0.0712",
+      "amino_acid_composition.gly_fraction": "0.0841",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.08",
+      "oracle_ppi.overall_pae": "23.7898",
+      "oracle_ppi.overall_ptm": "22.01",
+      "oracle_ppi.overall_iptm": "8.13",
+      "oracle_ppi.ranking_score": "0.1091",
+      "oracle_ppi.min_ipae_B_1_A_1": "24.1328",
+      "oracle_ppi.iptm_B_1_A_1": "8.13",
+      "oracle_ppi.plddt_coi": "70.44",
+      "oracle_ppi.ptm_coi": "70.88",
+      "oracle_ppi.pae_coi": "2.9901",
+      "oracle_ppi.ipae_coi": "28.168",
+      "oracle_ppi.min_ipae_coi": "24.1328",
+      "oracle_ppi.iptm_coi": "8.13",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_26/binder_3evg_26_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_26/binder_3evg_26_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.2595",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_26_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_27",
+     "path": "data/binder_3evg/binder_3evg_27.cif",
+     "length": 320,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_3evg/binder_3evg_27/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_3evg/binder_3evg_27/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_27/binder_3evg_27_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "320.0",
+      "amino_acid_composition.ala_fraction": "0.05",
+      "amino_acid_composition.val_fraction": "0.0812",
+      "amino_acid_composition.gly_fraction": "0.0844",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.87",
+      "oracle_ppi.overall_pae": "23.4149",
+      "oracle_ppi.overall_ptm": "26.81",
+      "oracle_ppi.overall_iptm": "10.85",
+      "oracle_ppi.ranking_score": "0.1404",
+      "oracle_ppi.min_ipae_B_1_A_1": "19.1172",
+      "oracle_ppi.iptm_B_1_A_1": "10.85",
+      "oracle_ppi.plddt_coi": "76.0",
+      "oracle_ppi.ptm_coi": "80.34",
+      "oracle_ppi.pae_coi": "2.2289",
+      "oracle_ppi.ipae_coi": "26.6187",
+      "oracle_ppi.min_ipae_coi": "19.1172",
+      "oracle_ppi.iptm_coi": "10.85",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_27/binder_3evg_27_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_27/binder_3evg_27_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "21.3763",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_27_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_28",
+     "path": "data/binder_3evg/binder_3evg_28.cif",
+     "length": 326,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_28/binder_3evg_28_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "326.0",
+      "amino_acid_composition.ala_fraction": "0.0491",
+      "amino_acid_composition.val_fraction": "0.0706",
+      "amino_acid_composition.gly_fraction": "0.0828",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "43.01",
+      "oracle_ppi.overall_pae": "23.607",
+      "oracle_ppi.overall_ptm": "27.12",
+      "oracle_ppi.overall_iptm": "9.55",
+      "oracle_ppi.ranking_score": "0.1307",
+      "oracle_ppi.min_ipae_B_1_A_1": "21.3516",
+      "oracle_ppi.iptm_B_1_A_1": "9.55",
+      "oracle_ppi.plddt_coi": "75.75",
+      "oracle_ppi.ptm_coi": "81.53",
+      "oracle_ppi.pae_coi": "2.4445",
+      "oracle_ppi.ipae_coi": "27.1686",
+      "oracle_ppi.min_ipae_coi": "21.3516",
+      "oracle_ppi.iptm_coi": "9.55",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_28/binder_3evg_28_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_28/binder_3evg_28_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "24.7814",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_28_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_29",
+     "path": "data/binder_3evg/binder_3evg_29.cif",
+     "length": 351,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_29/binder_3evg_29_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "351.0",
+      "amino_acid_composition.ala_fraction": "0.037",
+      "amino_acid_composition.val_fraction": "0.094",
+      "amino_acid_composition.gly_fraction": "0.0769",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "37.45",
+      "oracle_ppi.overall_pae": "24.4459",
+      "oracle_ppi.overall_ptm": "20.85",
+      "oracle_ppi.overall_iptm": "8.78",
+      "oracle_ppi.ranking_score": "0.1119",
+      "oracle_ppi.min_ipae_B_1_A_1": "23.0938",
+      "oracle_ppi.iptm_B_1_A_1": "8.78",
+      "oracle_ppi.plddt_coi": "44.68",
+      "oracle_ppi.ptm_coi": "37.8",
+      "oracle_ppi.pae_coi": "12.8178",
+      "oracle_ppi.ipae_coi": "28.1876",
+      "oracle_ppi.min_ipae_coi": "23.0938",
+      "oracle_ppi.iptm_coi": "8.78",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_29/binder_3evg_29_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_29/binder_3evg_29_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.5778",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_29_refolded.cif"
+    },
+    {
+     "id": "binder_3evg_3",
+     "path": "data/binder_3evg/binder_3evg_3.cif",
+     "length": 365,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_3/binder_3evg_3_generated.cif",
+      "task": "binder_3evg",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_3evg.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples",
+      "metrics_tags": "ppi_refolding",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "365.0",
+      "amino_acid_composition.ala_fraction": "0.0274",
+      "amino_acid_composition.val_fraction": "0.0712",
+      "amino_acid_composition.gly_fraction": "0.0904",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "35.21",
+      "oracle_ppi.overall_pae": "24.7033",
+      "oracle_ppi.overall_ptm": "19.29",
+      "oracle_ppi.overall_iptm": "9.5",
+      "oracle_ppi.ranking_score": "0.1146",
+      "oracle_ppi.min_ipae_B_1_A_1": "23.211",
+      "oracle_ppi.iptm_B_1_A_1": "9.5",
+      "oracle_ppi.plddt_coi": "37.56",
+      "oracle_ppi.ptm_coi": "28.84",
+      "oracle_ppi.pae_coi": "16.2154",
+      "oracle_ppi.ipae_coi": "28.2083",
+      "oracle_ppi.min_ipae_coi": "23.211",
+      "oracle_ppi.iptm_coi": "9.5",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_3/binder_3evg_3_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_3evg/inference_samples/binder_3evg_3/binder_3evg_3_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "23.0878",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_3evg/binder_3evg_3_refolded.cif"
+    }
+   ],
+   "target": "3evg_apo"
+  },
+  "binder_il15_faceA": {
+   "title": "IL-15 Face A",
+   "what": "IL-15, aimed at the epitope BindCraft2 designed against successfully. One design here reaches an interface the oracle finds plausible.",
+   "captured": true,
+   "command": "rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA num_replicates=32 seed=1234 metrics_tags='[ppi_refolding,hotspot_conditioning]' metrics/refolding_oracles=af2 generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
+   "nsteps": 60,
+   "saveEvery": 2,
+   "designs": 24,
+   "frames": 124,
+   "counts": {
+    "requested": 32,
+    "written": 24,
+    "frames": 124,
+    "scored": 32,
+    "passing": 0
+   },
+   "gpuHours": 0.143,
+   "log": "data/binder_il15_faceA/run.log",
+   "metrics": "data/binder_il15_faceA/per_example_metrics.csv",
+   "designsList": [
+    {
+     "id": "binder_il15_faceA_0",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_0.cif",
+     "length": 197,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_0/binder_il15_faceA_0_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "197.0",
+      "amino_acid_composition.ala_fraction": "0.0558",
+      "amino_acid_composition.val_fraction": "0.0406",
+      "amino_acid_composition.gly_fraction": "0.0203",
+      "hotspot_obedience.hotspot_obedience": "0.6463",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "39.06",
+      "oracle_ppi.overall_pae": "20.5767",
+      "oracle_ppi.overall_ptm": "22.28",
+      "oracle_ppi.overall_iptm": "9.06",
+      "oracle_ppi.ranking_score": "0.117",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.6054",
+      "oracle_ppi.iptm_B_1_A_1": "9.06",
+      "oracle_ppi.plddt_coi": "40.43",
+      "oracle_ppi.ptm_coi": "28.85",
+      "oracle_ppi.pae_coi": "14.6813",
+      "oracle_ppi.ipae_coi": "25.1384",
+      "oracle_ppi.min_ipae_coi": "16.6054",
+      "oracle_ppi.iptm_coi": "9.06",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_0/binder_il15_faceA_0_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_0/binder_il15_faceA_0_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "18.086",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_0_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_1",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_1.cif",
+     "length": 209,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_1/binder_il15_faceA_1_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "209.0",
+      "amino_acid_composition.ala_fraction": "0.0383",
+      "amino_acid_composition.val_fraction": "0.0813",
+      "amino_acid_composition.gly_fraction": "0.0335",
+      "hotspot_obedience.hotspot_obedience": "0.5976",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "51.69",
+      "oracle_ppi.overall_pae": "17.7123",
+      "oracle_ppi.overall_ptm": "43.07",
+      "oracle_ppi.overall_iptm": "13.73",
+      "oracle_ppi.ranking_score": "0.196",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.6289",
+      "oracle_ppi.iptm_B_1_A_1": "13.73",
+      "oracle_ppi.plddt_coi": "69.65",
+      "oracle_ppi.ptm_coi": "70.34",
+      "oracle_ppi.pae_coi": "5.2356",
+      "oracle_ppi.ipae_coi": "22.9293",
+      "oracle_ppi.min_ipae_coi": "12.6289",
+      "oracle_ppi.iptm_coi": "13.73",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_1/binder_il15_faceA_1_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_1/binder_il15_faceA_1_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "17.8421",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_1_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_10",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_10.cif",
+     "length": 199,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_10/binder_il15_faceA_10_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "199.0",
+      "amino_acid_composition.ala_fraction": "0.0553",
+      "amino_acid_composition.val_fraction": "0.0653",
+      "amino_acid_composition.gly_fraction": "0.0201",
+      "hotspot_obedience.hotspot_obedience": "0.5854",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "53.36",
+      "oracle_ppi.overall_pae": "17.368",
+      "oracle_ppi.overall_ptm": "44.53",
+      "oracle_ppi.overall_iptm": "14.49",
+      "oracle_ppi.ranking_score": "0.205",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.7852",
+      "oracle_ppi.iptm_B_1_A_1": "14.49",
+      "oracle_ppi.plddt_coi": "73.83",
+      "oracle_ppi.ptm_coi": "77.97",
+      "oracle_ppi.pae_coi": "4.3797",
+      "oracle_ppi.ipae_coi": "22.5446",
+      "oracle_ppi.min_ipae_coi": "12.7852",
+      "oracle_ppi.iptm_coi": "14.49",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_10/binder_il15_faceA_10_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_10/binder_il15_faceA_10_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.6127",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_10_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_11",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_11.cif",
+     "length": 209,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_11/binder_il15_faceA_11_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "209.0",
+      "amino_acid_composition.ala_fraction": "0.0622",
+      "amino_acid_composition.val_fraction": "0.0909",
+      "amino_acid_composition.gly_fraction": "0.0383",
+      "hotspot_obedience.hotspot_obedience": "0.4268",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "44.71",
+      "oracle_ppi.overall_pae": "18.7568",
+      "oracle_ppi.overall_ptm": "35.86",
+      "oracle_ppi.overall_iptm": "13.31",
+      "oracle_ppi.ranking_score": "0.1782",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.2188",
+      "oracle_ppi.iptm_B_1_A_1": "13.3",
+      "oracle_ppi.plddt_coi": "54.72",
+      "oracle_ppi.ptm_coi": "52.54",
+      "oracle_ppi.pae_coi": "9.424",
+      "oracle_ppi.ipae_coi": "23.3163",
+      "oracle_ppi.min_ipae_coi": "14.2188",
+      "oracle_ppi.iptm_coi": "13.3",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_11/binder_il15_faceA_11_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_11/binder_il15_faceA_11_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.6871",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_11_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_12",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_12.cif",
+     "length": 223,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_12/binder_il15_faceA_12_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "223.0",
+      "amino_acid_composition.ala_fraction": "0.0538",
+      "amino_acid_composition.val_fraction": "0.0807",
+      "amino_acid_composition.gly_fraction": "0.0628",
+      "hotspot_obedience.hotspot_obedience": "0.4512",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "35.84",
+      "oracle_ppi.overall_pae": "21.9152",
+      "oracle_ppi.overall_ptm": "21.63",
+      "oracle_ppi.overall_iptm": "8.27",
+      "oracle_ppi.ranking_score": "0.1094",
+      "oracle_ppi.min_ipae_B_1_A_1": "18.2031",
+      "oracle_ppi.iptm_B_1_A_1": "8.27",
+      "oracle_ppi.plddt_coi": "33.35",
+      "oracle_ppi.ptm_coi": "23.39",
+      "oracle_ppi.pae_coi": "17.3306",
+      "oracle_ppi.ipae_coi": "26.6734",
+      "oracle_ppi.min_ipae_coi": "18.2031",
+      "oracle_ppi.iptm_coi": "8.27",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_12/binder_il15_faceA_12_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_12/binder_il15_faceA_12_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.9262",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_12_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_13",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_13.cif",
+     "length": 223,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_13/binder_il15_faceA_13_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "223.0",
+      "amino_acid_composition.ala_fraction": "0.0538",
+      "amino_acid_composition.val_fraction": "0.0852",
+      "amino_acid_composition.gly_fraction": "0.0538",
+      "hotspot_obedience.hotspot_obedience": "0.4268",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "35.3",
+      "oracle_ppi.overall_pae": "22.4821",
+      "oracle_ppi.overall_ptm": "21.95",
+      "oracle_ppi.overall_iptm": "7.2",
+      "oracle_ppi.ranking_score": "0.1015",
+      "oracle_ppi.min_ipae_B_1_A_1": "21.8984",
+      "oracle_ppi.iptm_B_1_A_1": "7.2",
+      "oracle_ppi.plddt_coi": "31.46",
+      "oracle_ppi.ptm_coi": "23.77",
+      "oracle_ppi.pae_coi": "18.5779",
+      "oracle_ppi.ipae_coi": "27.4058",
+      "oracle_ppi.min_ipae_coi": "21.8984",
+      "oracle_ppi.iptm_coi": "7.2",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_13/binder_il15_faceA_13_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_13/binder_il15_faceA_13_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.1154",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_13_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_14",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_14.cif",
+     "length": 217,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceA/binder_il15_faceA_14/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceA/binder_il15_faceA_14/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_14/binder_il15_faceA_14_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "217.0",
+      "amino_acid_composition.ala_fraction": "0.0507",
+      "amino_acid_composition.val_fraction": "0.0876",
+      "amino_acid_composition.gly_fraction": "0.0323",
+      "hotspot_obedience.hotspot_obedience": "0.5854",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.29",
+      "oracle_ppi.overall_pae": "16.8656",
+      "oracle_ppi.overall_ptm": "49.9",
+      "oracle_ppi.overall_iptm": "15.88",
+      "oracle_ppi.ranking_score": "0.2269",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.125",
+      "oracle_ppi.iptm_B_1_A_1": "15.88",
+      "oracle_ppi.plddt_coi": "78.21",
+      "oracle_ppi.ptm_coi": "84.1",
+      "oracle_ppi.pae_coi": "4.031",
+      "oracle_ppi.ipae_coi": "22.276",
+      "oracle_ppi.min_ipae_coi": "12.125",
+      "oracle_ppi.iptm_coi": "15.88",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_14/binder_il15_faceA_14_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_14/binder_il15_faceA_14_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.738",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_14_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_15",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_15.cif",
+     "length": 207,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_15/binder_il15_faceA_15_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "207.0",
+      "amino_acid_composition.ala_fraction": "0.0435",
+      "amino_acid_composition.val_fraction": "0.0966",
+      "amino_acid_composition.gly_fraction": "0.0242",
+      "hotspot_obedience.hotspot_obedience": "0.5122",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.15",
+      "oracle_ppi.overall_pae": "17.396",
+      "oracle_ppi.overall_ptm": "47.17",
+      "oracle_ppi.overall_iptm": "14.01",
+      "oracle_ppi.ranking_score": "0.2064",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.4844",
+      "oracle_ppi.iptm_B_1_A_1": "14.02",
+      "oracle_ppi.plddt_coi": "82.14",
+      "oracle_ppi.ptm_coi": "84.92",
+      "oracle_ppi.pae_coi": "2.5407",
+      "oracle_ppi.ipae_coi": "23.3293",
+      "oracle_ppi.min_ipae_coi": "15.4844",
+      "oracle_ppi.iptm_coi": "14.02",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_15/binder_il15_faceA_15_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_15/binder_il15_faceA_15_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.4351",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_15_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_16",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_16.cif",
+     "length": 202,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_16/binder_il15_faceA_16_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "202.0",
+      "amino_acid_composition.ala_fraction": "0.0347",
+      "amino_acid_composition.val_fraction": "0.0396",
+      "amino_acid_composition.gly_fraction": "0.0198",
+      "hotspot_obedience.hotspot_obedience": "0.5976",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.6",
+      "oracle_ppi.overall_pae": "17.4324",
+      "oracle_ppi.overall_ptm": "46.48",
+      "oracle_ppi.overall_iptm": "14.1",
+      "oracle_ppi.ranking_score": "0.2058",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.3867",
+      "oracle_ppi.iptm_B_1_A_1": "14.1",
+      "oracle_ppi.plddt_coi": "82.69",
+      "oracle_ppi.ptm_coi": "85.21",
+      "oracle_ppi.pae_coi": "2.4969",
+      "oracle_ppi.ipae_coi": "22.7576",
+      "oracle_ppi.min_ipae_coi": "13.3867",
+      "oracle_ppi.iptm_coi": "14.1",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_16/binder_il15_faceA_16_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_16/binder_il15_faceA_16_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.4637",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_16_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_17",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_17.cif",
+     "length": 204,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_17/binder_il15_faceA_17_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "204.0",
+      "amino_acid_composition.ala_fraction": "0.0441",
+      "amino_acid_composition.val_fraction": "0.0735",
+      "amino_acid_composition.gly_fraction": "0.0539",
+      "hotspot_obedience.hotspot_obedience": "0.5",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "41.9",
+      "oracle_ppi.overall_pae": "19.8833",
+      "oracle_ppi.overall_ptm": "27.51",
+      "oracle_ppi.overall_iptm": "10.27",
+      "oracle_ppi.ranking_score": "0.1372",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.8008",
+      "oracle_ppi.iptm_B_1_A_1": "10.26",
+      "oracle_ppi.plddt_coi": "46.93",
+      "oracle_ppi.ptm_coi": "39.17",
+      "oracle_ppi.pae_coi": "11.8336",
+      "oracle_ppi.ipae_coi": "24.8521",
+      "oracle_ppi.min_ipae_coi": "16.8008",
+      "oracle_ppi.iptm_coi": "10.26",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_17/binder_il15_faceA_17_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_17/binder_il15_faceA_17_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.1438",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_17_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_18",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_18.cif",
+     "length": 219,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_18/binder_il15_faceA_18_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "219.0",
+      "amino_acid_composition.ala_fraction": "0.0502",
+      "amino_acid_composition.val_fraction": "0.0868",
+      "amino_acid_composition.gly_fraction": "0.0228",
+      "hotspot_obedience.hotspot_obedience": "0.6098",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.73",
+      "oracle_ppi.overall_pae": "17.6212",
+      "oracle_ppi.overall_ptm": "45.63",
+      "oracle_ppi.overall_iptm": "14.45",
+      "oracle_ppi.ranking_score": "0.2069",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.6484",
+      "oracle_ppi.iptm_B_1_A_1": "14.46",
+      "oracle_ppi.plddt_coi": "74.51",
+      "oracle_ppi.ptm_coi": "76.33",
+      "oracle_ppi.pae_coi": "6.5347",
+      "oracle_ppi.ipae_coi": "23.0094",
+      "oracle_ppi.min_ipae_coi": "13.6484",
+      "oracle_ppi.iptm_coi": "14.46",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_18/binder_il15_faceA_18_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_18/binder_il15_faceA_18_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.8036",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_18_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_19",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_19.cif",
+     "length": 206,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_19/binder_il15_faceA_19_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "206.0",
+      "amino_acid_composition.ala_fraction": "0.0291",
+      "amino_acid_composition.val_fraction": "0.0583",
+      "amino_acid_composition.gly_fraction": "0.0194",
+      "hotspot_obedience.hotspot_obedience": "0.561",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.97",
+      "oracle_ppi.overall_pae": "19.1331",
+      "oracle_ppi.overall_ptm": "42.82",
+      "oracle_ppi.overall_iptm": "8.0",
+      "oracle_ppi.ranking_score": "0.1496",
+      "oracle_ppi.min_ipae_B_1_A_1": "19.9297",
+      "oracle_ppi.iptm_B_1_A_1": "7.99",
+      "oracle_ppi.plddt_coi": "78.41",
+      "oracle_ppi.ptm_coi": "81.94",
+      "oracle_ppi.pae_coi": "3.5003",
+      "oracle_ppi.ipae_coi": "26.2645",
+      "oracle_ppi.min_ipae_coi": "19.9297",
+      "oracle_ppi.iptm_coi": "7.99",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_19/binder_il15_faceA_19_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_19/binder_il15_faceA_19_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.2133",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_19_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_2",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_2.cif",
+     "length": 212,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceA/binder_il15_faceA_2/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceA/binder_il15_faceA_2/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_2/binder_il15_faceA_2_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "212.0",
+      "amino_acid_composition.ala_fraction": "0.033",
+      "amino_acid_composition.val_fraction": "0.1085",
+      "amino_acid_composition.gly_fraction": "0.0377",
+      "hotspot_obedience.hotspot_obedience": "0.5488",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "60.75",
+      "oracle_ppi.overall_pae": "16.0531",
+      "oracle_ppi.overall_ptm": "52.44",
+      "oracle_ppi.overall_iptm": "27.78",
+      "oracle_ppi.ranking_score": "0.3271",
+      "oracle_ppi.min_ipae_B_1_A_1": "10.0898",
+      "oracle_ppi.iptm_B_1_A_1": "27.78",
+      "oracle_ppi.plddt_coi": "85.76",
+      "oracle_ppi.ptm_coi": "86.27",
+      "oracle_ppi.pae_coi": "2.5568",
+      "oracle_ppi.ipae_coi": "21.2145",
+      "oracle_ppi.min_ipae_coi": "10.0898",
+      "oracle_ppi.iptm_coi": "27.78",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_2/binder_il15_faceA_2_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_2/binder_il15_faceA_2_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.4429",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_2_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_20",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_20.cif",
+     "length": 212,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_20/binder_il15_faceA_20_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "212.0",
+      "amino_acid_composition.ala_fraction": "0.0377",
+      "amino_acid_composition.val_fraction": "0.0849",
+      "amino_acid_composition.gly_fraction": "0.0377",
+      "hotspot_obedience.hotspot_obedience": "0.5244",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "48.07",
+      "oracle_ppi.overall_pae": "19.3206",
+      "oracle_ppi.overall_ptm": "40.43",
+      "oracle_ppi.overall_iptm": "12.16",
+      "oracle_ppi.ranking_score": "0.1781",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.4648",
+      "oracle_ppi.iptm_B_1_A_1": "12.16",
+      "oracle_ppi.plddt_coi": "61.56",
+      "oracle_ppi.ptm_coi": "65.58",
+      "oracle_ppi.pae_coi": "8.4577",
+      "oracle_ppi.ipae_coi": "24.8256",
+      "oracle_ppi.min_ipae_coi": "16.4648",
+      "oracle_ppi.iptm_coi": "12.16",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_20/binder_il15_faceA_20_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_20/binder_il15_faceA_20_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "17.5264",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_20_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_21",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_21.cif",
+     "length": 224,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_21/binder_il15_faceA_21_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "224.0",
+      "amino_acid_composition.ala_fraction": "0.0312",
+      "amino_acid_composition.val_fraction": "0.067",
+      "amino_acid_composition.gly_fraction": "0.0312",
+      "hotspot_obedience.hotspot_obedience": "0.4024",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "35.58",
+      "oracle_ppi.overall_pae": "22.0827",
+      "oracle_ppi.overall_ptm": "21.59",
+      "oracle_ppi.overall_iptm": "7.52",
+      "oracle_ppi.ranking_score": "0.1033",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.6797",
+      "oracle_ppi.iptm_B_1_A_1": "7.52",
+      "oracle_ppi.plddt_coi": "31.97",
+      "oracle_ppi.ptm_coi": "18.29",
+      "oracle_ppi.pae_coi": "17.3253",
+      "oracle_ppi.ipae_coi": "27.1673",
+      "oracle_ppi.min_ipae_coi": "20.6797",
+      "oracle_ppi.iptm_coi": "7.52",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_21/binder_il15_faceA_21_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_21/binder_il15_faceA_21_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "17.7164",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_21_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_22",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_22.cif",
+     "length": 207,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceA/binder_il15_faceA_22/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceA/binder_il15_faceA_22/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_22/binder_il15_faceA_22_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "207.0",
+      "amino_acid_composition.ala_fraction": "0.0483",
+      "amino_acid_composition.val_fraction": "0.058",
+      "amino_acid_composition.gly_fraction": "0.0242",
+      "hotspot_obedience.hotspot_obedience": "0.4756",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.31",
+      "oracle_ppi.overall_pae": "17.0948",
+      "oracle_ppi.overall_ptm": "48.73",
+      "oracle_ppi.overall_iptm": "16.0",
+      "oracle_ppi.ranking_score": "0.2255",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.3046",
+      "oracle_ppi.iptm_B_1_A_1": "16.0",
+      "oracle_ppi.plddt_coi": "83.45",
+      "oracle_ppi.ptm_coi": "85.0",
+      "oracle_ppi.pae_coi": "2.4877",
+      "oracle_ppi.ipae_coi": "22.4771",
+      "oracle_ppi.min_ipae_coi": "13.3046",
+      "oracle_ppi.iptm_coi": "16.0",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_22/binder_il15_faceA_22_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_22/binder_il15_faceA_22_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.9228",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_22_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_23",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_23.cif",
+     "length": 213,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_23/binder_il15_faceA_23_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "213.0",
+      "amino_acid_composition.ala_fraction": "0.0563",
+      "amino_acid_composition.val_fraction": "0.1033",
+      "amino_acid_composition.gly_fraction": "0.0469",
+      "hotspot_obedience.hotspot_obedience": "0.4024",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.76",
+      "oracle_ppi.overall_pae": "17.2542",
+      "oracle_ppi.overall_ptm": "49.02",
+      "oracle_ppi.overall_iptm": "13.72",
+      "oracle_ppi.ranking_score": "0.2078",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.2148",
+      "oracle_ppi.iptm_B_1_A_1": "13.72",
+      "oracle_ppi.plddt_coi": "82.77",
+      "oracle_ppi.ptm_coi": "85.96",
+      "oracle_ppi.pae_coi": "2.6442",
+      "oracle_ppi.ipae_coi": "23.2844",
+      "oracle_ppi.min_ipae_coi": "15.2148",
+      "oracle_ppi.iptm_coi": "13.72",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_23/binder_il15_faceA_23_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_23/binder_il15_faceA_23_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.6192",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_23_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_24",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_24.cif",
+     "length": 200,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceA/binder_il15_faceA_24/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceA/binder_il15_faceA_24/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_24/binder_il15_faceA_24_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "200.0",
+      "amino_acid_composition.ala_fraction": "0.045",
+      "amino_acid_composition.val_fraction": "0.075",
+      "amino_acid_composition.gly_fraction": "0.04",
+      "hotspot_obedience.hotspot_obedience": "0.7195",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "59.21",
+      "oracle_ppi.overall_pae": "15.1017",
+      "oracle_ppi.overall_ptm": "54.1",
+      "oracle_ppi.overall_iptm": "51.07",
+      "oracle_ppi.ranking_score": "0.5168",
+      "oracle_ppi.min_ipae_B_1_A_1": "5.6114",
+      "oracle_ppi.iptm_B_1_A_1": "51.09",
+      "oracle_ppi.plddt_coi": "83.6",
+      "oracle_ppi.ptm_coi": "81.55",
+      "oracle_ppi.pae_coi": "3.0822",
+      "oracle_ppi.ipae_coi": "18.3392",
+      "oracle_ppi.min_ipae_coi": "5.6114",
+      "oracle_ppi.iptm_coi": "51.09",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_24/binder_il15_faceA_24_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_24/binder_il15_faceA_24_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.0619",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_24_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_25",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_25.cif",
+     "length": 199,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_25/binder_il15_faceA_25_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "199.0",
+      "amino_acid_composition.ala_fraction": "0.0452",
+      "amino_acid_composition.val_fraction": "0.1055",
+      "amino_acid_composition.gly_fraction": "0.0553",
+      "hotspot_obedience.hotspot_obedience": "0.5976",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "53.0",
+      "oracle_ppi.overall_pae": "18.5016",
+      "oracle_ppi.overall_ptm": "42.8",
+      "oracle_ppi.overall_iptm": "10.55",
+      "oracle_ppi.ranking_score": "0.17",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.7656",
+      "oracle_ppi.iptm_B_1_A_1": "10.55",
+      "oracle_ppi.plddt_coi": "75.4",
+      "oracle_ppi.ptm_coi": "79.54",
+      "oracle_ppi.pae_coi": "3.9301",
+      "oracle_ppi.ipae_coi": "24.3599",
+      "oracle_ppi.min_ipae_coi": "16.7656",
+      "oracle_ppi.iptm_coi": "10.55",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_25/binder_il15_faceA_25_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_25/binder_il15_faceA_25_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "13.8142",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_25_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_26",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_26.cif",
+     "length": 197,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_26/binder_il15_faceA_26_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "197.0",
+      "amino_acid_composition.ala_fraction": "0.0609",
+      "amino_acid_composition.val_fraction": "0.0863",
+      "amino_acid_composition.gly_fraction": "0.0305",
+      "hotspot_obedience.hotspot_obedience": "0.6098",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "50.9",
+      "oracle_ppi.overall_pae": "18.2902",
+      "oracle_ppi.overall_ptm": "40.01",
+      "oracle_ppi.overall_iptm": "12.45",
+      "oracle_ppi.ranking_score": "0.1796",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.4961",
+      "oracle_ppi.iptm_B_1_A_1": "12.45",
+      "oracle_ppi.plddt_coi": "69.53",
+      "oracle_ppi.ptm_coi": "68.64",
+      "oracle_ppi.pae_coi": "5.706",
+      "oracle_ppi.ipae_coi": "23.4269",
+      "oracle_ppi.min_ipae_coi": "14.4961",
+      "oracle_ppi.iptm_coi": "12.45",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_26/binder_il15_faceA_26_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_26/binder_il15_faceA_26_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "17.9907",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_26_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_27",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_27.cif",
+     "length": 203,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_27/binder_il15_faceA_27_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "203.0",
+      "amino_acid_composition.ala_fraction": "0.0443",
+      "amino_acid_composition.val_fraction": "0.0936",
+      "amino_acid_composition.gly_fraction": "0.0493",
+      "hotspot_obedience.hotspot_obedience": "0.5854",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "42.63",
+      "oracle_ppi.overall_pae": "20.1102",
+      "oracle_ppi.overall_ptm": "30.18",
+      "oracle_ppi.overall_iptm": "9.63",
+      "oracle_ppi.ranking_score": "0.1374",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.9922",
+      "oracle_ppi.iptm_B_1_A_1": "9.63",
+      "oracle_ppi.plddt_coi": "49.16",
+      "oracle_ppi.ptm_coi": "46.89",
+      "oracle_ppi.pae_coi": "11.3842",
+      "oracle_ppi.ipae_coi": "25.1904",
+      "oracle_ppi.min_ipae_coi": "16.9922",
+      "oracle_ppi.iptm_coi": "9.63",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_27/binder_il15_faceA_27_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_27/binder_il15_faceA_27_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "13.7584",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_27_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_28",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_28.cif",
+     "length": 205,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_28/binder_il15_faceA_28_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "205.0",
+      "amino_acid_composition.ala_fraction": "0.0341",
+      "amino_acid_composition.val_fraction": "0.0683",
+      "amino_acid_composition.gly_fraction": "0.0244",
+      "hotspot_obedience.hotspot_obedience": "0.5244",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.71",
+      "oracle_ppi.overall_pae": "17.6138",
+      "oracle_ppi.overall_ptm": "45.75",
+      "oracle_ppi.overall_iptm": "12.27",
+      "oracle_ppi.ranking_score": "0.1897",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.9882",
+      "oracle_ppi.iptm_B_1_A_1": "12.28",
+      "oracle_ppi.plddt_coi": "80.18",
+      "oracle_ppi.ptm_coi": "83.87",
+      "oracle_ppi.pae_coi": "2.8611",
+      "oracle_ppi.ipae_coi": "23.8606",
+      "oracle_ppi.min_ipae_coi": "15.9882",
+      "oracle_ppi.iptm_coi": "12.28",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_28/binder_il15_faceA_28_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_28/binder_il15_faceA_28_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.6796",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_28_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_29",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_29.cif",
+     "length": 216,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_29/binder_il15_faceA_29_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "216.0",
+      "amino_acid_composition.ala_fraction": "0.0509",
+      "amino_acid_composition.val_fraction": "0.0787",
+      "amino_acid_composition.gly_fraction": "0.0278",
+      "hotspot_obedience.hotspot_obedience": "0.6098",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "44.07",
+      "oracle_ppi.overall_pae": "20.136",
+      "oracle_ppi.overall_ptm": "33.72",
+      "oracle_ppi.overall_iptm": "9.84",
+      "oracle_ppi.ranking_score": "0.1462",
+      "oracle_ppi.min_ipae_B_1_A_1": "18.2734",
+      "oracle_ppi.iptm_B_1_A_1": "9.85",
+      "oracle_ppi.plddt_coi": "50.48",
+      "oracle_ppi.ptm_coi": "50.64",
+      "oracle_ppi.pae_coi": "11.149",
+      "oracle_ppi.ipae_coi": "25.8496",
+      "oracle_ppi.min_ipae_coi": "18.2734",
+      "oracle_ppi.iptm_coi": "9.85",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_29/binder_il15_faceA_29_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_29/binder_il15_faceA_29_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.6126",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_29_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceA_3",
+     "path": "data/binder_il15_faceA/binder_il15_faceA_3.cif",
+     "length": 222,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_3/binder_il15_faceA_3_generated.cif",
+      "task": "binder_il15_faceA",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceA.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "222.0",
+      "amino_acid_composition.ala_fraction": "0.0586",
+      "amino_acid_composition.val_fraction": "0.0766",
+      "amino_acid_composition.gly_fraction": "0.0225",
+      "hotspot_obedience.hotspot_obedience": "0.622",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "59.7",
+      "oracle_ppi.overall_pae": "17.2255",
+      "oracle_ppi.overall_ptm": "49.83",
+      "oracle_ppi.overall_iptm": "14.17",
+      "oracle_ppi.ranking_score": "0.213",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.1328",
+      "oracle_ppi.iptm_B_1_A_1": "14.17",
+      "oracle_ppi.plddt_coi": "82.18",
+      "oracle_ppi.ptm_coi": "84.85",
+      "oracle_ppi.pae_coi": "3.741",
+      "oracle_ppi.ipae_coi": "23.7286",
+      "oracle_ppi.min_ipae_coi": "15.1328",
+      "oracle_ppi.iptm_coi": "14.17",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_3/binder_il15_faceA_3_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceA/inference_samples/binder_il15_faceA_3/binder_il15_faceA_3_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.6645",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceA/binder_il15_faceA_3_refolded.cif"
+    }
+   ],
+   "target": "il15_faceA"
+  },
+  "binder_il15_faceB": {
+   "title": "IL-15 Face B",
+   "what": "IL-15, aimed at the face BindCraft2 scored zero of two hundred against. Same model, same budget, same protein: only the epitope changed.",
+   "captured": true,
+   "command": "rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB num_replicates=32 seed=1234 metrics_tags='[ppi_refolding,hotspot_conditioning]' metrics/refolding_oracles=af2 generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true",
+   "nsteps": 60,
+   "saveEvery": 2,
+   "designs": 24,
+   "frames": 93,
+   "counts": {
+    "requested": 32,
+    "written": 24,
+    "frames": 93,
+    "scored": 32,
+    "passing": 0
+   },
+   "gpuHours": 0.145,
+   "log": "data/binder_il15_faceB/run.log",
+   "metrics": "data/binder_il15_faceB/per_example_metrics.csv",
+   "designsList": [
+    {
+     "id": "binder_il15_faceB_0",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_0.cif",
+     "length": 197,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_0/binder_il15_faceB_0_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "197.0",
+      "amino_acid_composition.ala_fraction": "0.0355",
+      "amino_acid_composition.val_fraction": "0.0609",
+      "amino_acid_composition.gly_fraction": "0.0254",
+      "hotspot_obedience.hotspot_obedience": "0.3492",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.68",
+      "oracle_ppi.overall_pae": "18.8424",
+      "oracle_ppi.overall_ptm": "41.72",
+      "oracle_ppi.overall_iptm": "7.27",
+      "oracle_ppi.ranking_score": "0.1416",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.0703",
+      "oracle_ppi.iptm_B_1_A_1": "7.27",
+      "oracle_ppi.plddt_coi": "81.9",
+      "oracle_ppi.ptm_coi": "84.35",
+      "oracle_ppi.pae_coi": "2.4377",
+      "oracle_ppi.ipae_coi": "26.2383",
+      "oracle_ppi.min_ipae_coi": "20.0703",
+      "oracle_ppi.iptm_coi": "7.27",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_0/binder_il15_faceB_0_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_0/binder_il15_faceB_0_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "17.0851",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_0_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_1",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_1.cif",
+     "length": 209,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_1/binder_il15_faceB_1_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "209.0",
+      "amino_acid_composition.ala_fraction": "0.0287",
+      "amino_acid_composition.val_fraction": "0.0718",
+      "amino_acid_composition.gly_fraction": "0.0383",
+      "hotspot_obedience.hotspot_obedience": "0.3492",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.98",
+      "oracle_ppi.overall_pae": "16.6986",
+      "oracle_ppi.overall_ptm": "49.05",
+      "oracle_ppi.overall_iptm": "15.69",
+      "oracle_ppi.ranking_score": "0.2236",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.6914",
+      "oracle_ppi.iptm_B_1_A_1": "15.69",
+      "oracle_ppi.plddt_coi": "81.61",
+      "oracle_ppi.ptm_coi": "85.51",
+      "oracle_ppi.pae_coi": "2.5687",
+      "oracle_ppi.ipae_coi": "22.0576",
+      "oracle_ppi.min_ipae_coi": "12.6914",
+      "oracle_ppi.iptm_coi": "15.69",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_1/binder_il15_faceB_1_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_1/binder_il15_faceB_1_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "13.7593",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_1_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_10",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_10.cif",
+     "length": 199,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_10/binder_il15_faceB_10_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "199.0",
+      "amino_acid_composition.ala_fraction": "0.0402",
+      "amino_acid_composition.val_fraction": "0.0553",
+      "amino_acid_composition.gly_fraction": "0.0201",
+      "hotspot_obedience.hotspot_obedience": "0.6349",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "53.92",
+      "oracle_ppi.overall_pae": "17.6007",
+      "oracle_ppi.overall_ptm": "41.92",
+      "oracle_ppi.overall_iptm": "13.57",
+      "oracle_ppi.ranking_score": "0.1924",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.7734",
+      "oracle_ppi.iptm_B_1_A_1": "13.58",
+      "oracle_ppi.plddt_coi": "75.12",
+      "oracle_ppi.ptm_coi": "74.76",
+      "oracle_ppi.pae_coi": "3.6942",
+      "oracle_ppi.ipae_coi": "23.2568",
+      "oracle_ppi.min_ipae_coi": "13.7734",
+      "oracle_ppi.iptm_coi": "13.58",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_10/binder_il15_faceB_10_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_10/binder_il15_faceB_10_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "13.0196",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_10_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_11",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_11.cif",
+     "length": 209,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_11/binder_il15_faceB_11_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "209.0",
+      "amino_acid_composition.ala_fraction": "0.0431",
+      "amino_acid_composition.val_fraction": "0.0478",
+      "amino_acid_composition.gly_fraction": "0.0191",
+      "hotspot_obedience.hotspot_obedience": "0.6825",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.04",
+      "oracle_ppi.overall_pae": "17.5485",
+      "oracle_ppi.overall_ptm": "44.46",
+      "oracle_ppi.overall_iptm": "13.98",
+      "oracle_ppi.ranking_score": "0.2007",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.5704",
+      "oracle_ppi.iptm_B_1_A_1": "13.98",
+      "oracle_ppi.plddt_coi": "73.75",
+      "oracle_ppi.ptm_coi": "76.27",
+      "oracle_ppi.pae_coi": "5.709",
+      "oracle_ppi.ipae_coi": "22.8062",
+      "oracle_ppi.min_ipae_coi": "13.5704",
+      "oracle_ppi.iptm_coi": "13.98",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_11/binder_il15_faceB_11_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_11/binder_il15_faceB_11_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.4476",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_11_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_12",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_12.cif",
+     "length": 223,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceB/binder_il15_faceB_12/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceB/binder_il15_faceB_12/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_12/binder_il15_faceB_12_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "223.0",
+      "amino_acid_composition.ala_fraction": "0.0493",
+      "amino_acid_composition.val_fraction": "0.0493",
+      "amino_acid_composition.gly_fraction": "0.0269",
+      "hotspot_obedience.hotspot_obedience": "0.1905",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "60.27",
+      "oracle_ppi.overall_pae": "16.2648",
+      "oracle_ppi.overall_ptm": "51.9",
+      "oracle_ppi.overall_iptm": "16.81",
+      "oracle_ppi.ranking_score": "0.2383",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.3281",
+      "oracle_ppi.iptm_B_1_A_1": "16.81",
+      "oracle_ppi.plddt_coi": "83.43",
+      "oracle_ppi.ptm_coi": "86.76",
+      "oracle_ppi.pae_coi": "3.0123",
+      "oracle_ppi.ipae_coi": "22.4069",
+      "oracle_ppi.min_ipae_coi": "14.3281",
+      "oracle_ppi.iptm_coi": "16.81",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_12/binder_il15_faceB_12_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_12/binder_il15_faceB_12_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "12.2737",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_12_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_13",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_13.cif",
+     "length": 223,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_13/binder_il15_faceB_13_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "223.0",
+      "amino_acid_composition.ala_fraction": "0.0404",
+      "amino_acid_composition.val_fraction": "0.0448",
+      "amino_acid_composition.gly_fraction": "0.0179",
+      "hotspot_obedience.hotspot_obedience": "0.4921",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "43.0",
+      "oracle_ppi.overall_pae": "19.9131",
+      "oracle_ppi.overall_ptm": "30.66",
+      "oracle_ppi.overall_iptm": "10.86",
+      "oracle_ppi.ranking_score": "0.1482",
+      "oracle_ppi.min_ipae_B_1_A_1": "16.0703",
+      "oracle_ppi.iptm_B_1_A_1": "10.86",
+      "oracle_ppi.plddt_coi": "48.77",
+      "oracle_ppi.ptm_coi": "44.86",
+      "oracle_ppi.pae_coi": "13.1681",
+      "oracle_ppi.ipae_coi": "24.6344",
+      "oracle_ppi.min_ipae_coi": "16.0703",
+      "oracle_ppi.iptm_coi": "10.86",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_13/binder_il15_faceB_13_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_13/binder_il15_faceB_13_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.52",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_13_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_14",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_14.cif",
+     "length": 217,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_14/binder_il15_faceB_14_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "217.0",
+      "amino_acid_composition.ala_fraction": "0.023",
+      "amino_acid_composition.val_fraction": "0.0599",
+      "amino_acid_composition.gly_fraction": "0.0369",
+      "hotspot_obedience.hotspot_obedience": "0.3968",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.41",
+      "oracle_ppi.overall_pae": "17.1388",
+      "oracle_ppi.overall_ptm": "49.0",
+      "oracle_ppi.overall_iptm": "13.92",
+      "oracle_ppi.ranking_score": "0.2093",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.2813",
+      "oracle_ppi.iptm_B_1_A_1": "13.91",
+      "oracle_ppi.plddt_coi": "80.2",
+      "oracle_ppi.ptm_coi": "85.32",
+      "oracle_ppi.pae_coi": "3.4602",
+      "oracle_ppi.ipae_coi": "23.0701",
+      "oracle_ppi.min_ipae_coi": "13.2813",
+      "oracle_ppi.iptm_coi": "13.91",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_14/binder_il15_faceB_14_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_14/binder_il15_faceB_14_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.8298",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_14_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_15",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_15.cif",
+     "length": 207,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_15/binder_il15_faceB_15_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "207.0",
+      "amino_acid_composition.ala_fraction": "0.0483",
+      "amino_acid_composition.val_fraction": "0.0918",
+      "amino_acid_composition.gly_fraction": "0.0338",
+      "hotspot_obedience.hotspot_obedience": "0.3175",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "58.14",
+      "oracle_ppi.overall_pae": "17.6787",
+      "oracle_ppi.overall_ptm": "47.27",
+      "oracle_ppi.overall_iptm": "12.84",
+      "oracle_ppi.ranking_score": "0.1973",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.8438",
+      "oracle_ppi.iptm_B_1_A_1": "12.84",
+      "oracle_ppi.plddt_coi": "83.67",
+      "oracle_ppi.ptm_coi": "86.74",
+      "oracle_ppi.pae_coi": "2.692",
+      "oracle_ppi.ipae_coi": "23.807",
+      "oracle_ppi.min_ipae_coi": "15.8438",
+      "oracle_ppi.iptm_coi": "12.84",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_15/binder_il15_faceB_15_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_15/binder_il15_faceB_15_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "15.6187",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_15_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_16",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_16.cif",
+     "length": 202,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_16/binder_il15_faceB_16_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "202.0",
+      "amino_acid_composition.ala_fraction": "0.0446",
+      "amino_acid_composition.val_fraction": "0.0545",
+      "amino_acid_composition.gly_fraction": "0.0297",
+      "hotspot_obedience.hotspot_obedience": "0.5714",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.04",
+      "oracle_ppi.overall_pae": "17.424",
+      "oracle_ppi.overall_ptm": "44.56",
+      "oracle_ppi.overall_iptm": "14.01",
+      "oracle_ppi.ranking_score": "0.2012",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.9296",
+      "oracle_ppi.iptm_B_1_A_1": "14.01",
+      "oracle_ppi.plddt_coi": "74.67",
+      "oracle_ppi.ptm_coi": "78.7",
+      "oracle_ppi.pae_coi": "3.8573",
+      "oracle_ppi.ipae_coi": "23.0244",
+      "oracle_ppi.min_ipae_coi": "15.9296",
+      "oracle_ppi.iptm_coi": "14.01",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_16/binder_il15_faceB_16_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_16/binder_il15_faceB_16_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.2688",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_16_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_17",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_17.cif",
+     "length": 204,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_17/binder_il15_faceB_17_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "204.0",
+      "amino_acid_composition.ala_fraction": "0.0392",
+      "amino_acid_composition.val_fraction": "0.0539",
+      "amino_acid_composition.gly_fraction": "0.0343",
+      "hotspot_obedience.hotspot_obedience": "0.5873",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "37.94",
+      "oracle_ppi.overall_pae": "21.5085",
+      "oracle_ppi.overall_ptm": "22.51",
+      "oracle_ppi.overall_iptm": "7.32",
+      "oracle_ppi.ranking_score": "0.1036",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.1328",
+      "oracle_ppi.iptm_B_1_A_1": "7.32",
+      "oracle_ppi.plddt_coi": "36.6",
+      "oracle_ppi.ptm_coi": "25.64",
+      "oracle_ppi.pae_coi": "15.788",
+      "oracle_ppi.ipae_coi": "26.7011",
+      "oracle_ppi.min_ipae_coi": "20.1328",
+      "oracle_ppi.iptm_coi": "7.32",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_17/binder_il15_faceB_17_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_17/binder_il15_faceB_17_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.8724",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_17_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_18",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_18.cif",
+     "length": 219,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_18/binder_il15_faceB_18_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "219.0",
+      "amino_acid_composition.ala_fraction": "0.032",
+      "amino_acid_composition.val_fraction": "0.0457",
+      "amino_acid_composition.gly_fraction": "0.0183",
+      "hotspot_obedience.hotspot_obedience": "0.6984",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "58.11",
+      "oracle_ppi.overall_pae": "17.118",
+      "oracle_ppi.overall_ptm": "49.15",
+      "oracle_ppi.overall_iptm": "14.98",
+      "oracle_ppi.ranking_score": "0.2181",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.7852",
+      "oracle_ppi.iptm_B_1_A_1": "14.98",
+      "oracle_ppi.plddt_coi": "80.17",
+      "oracle_ppi.ptm_coi": "81.48",
+      "oracle_ppi.pae_coi": "4.0237",
+      "oracle_ppi.ipae_coi": "23.1094",
+      "oracle_ppi.min_ipae_coi": "14.7852",
+      "oracle_ppi.iptm_coi": "14.98",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_18/binder_il15_faceB_18_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_18/binder_il15_faceB_18_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "13.8377",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_18_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_19",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_19.cif",
+     "length": 206,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_19/binder_il15_faceB_19_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "206.0",
+      "amino_acid_composition.ala_fraction": "0.0534",
+      "amino_acid_composition.val_fraction": "0.0534",
+      "amino_acid_composition.gly_fraction": "0.0194",
+      "hotspot_obedience.hotspot_obedience": "0.5238",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "55.16",
+      "oracle_ppi.overall_pae": "16.8107",
+      "oracle_ppi.overall_ptm": "46.78",
+      "oracle_ppi.overall_iptm": "14.54",
+      "oracle_ppi.ranking_score": "0.2099",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.7812",
+      "oracle_ppi.iptm_B_1_A_1": "14.54",
+      "oracle_ppi.plddt_coi": "76.56",
+      "oracle_ppi.ptm_coi": "82.59",
+      "oracle_ppi.pae_coi": "2.8049",
+      "oracle_ppi.ipae_coi": "22.711",
+      "oracle_ppi.min_ipae_coi": "15.7812",
+      "oracle_ppi.iptm_coi": "14.54",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_19/binder_il15_faceB_19_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_19/binder_il15_faceB_19_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.9286",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_19_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_2",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_2.cif",
+     "length": 212,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceB/binder_il15_faceB_2/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceB/binder_il15_faceB_2/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_2/binder_il15_faceB_2_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "212.0",
+      "amino_acid_composition.ala_fraction": "0.0425",
+      "amino_acid_composition.val_fraction": "0.0613",
+      "amino_acid_composition.gly_fraction": "0.0189",
+      "hotspot_obedience.hotspot_obedience": "0.2857",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.94",
+      "oracle_ppi.overall_pae": "16.9353",
+      "oracle_ppi.overall_ptm": "49.58",
+      "oracle_ppi.overall_iptm": "15.77",
+      "oracle_ppi.ranking_score": "0.2253",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.5469",
+      "oracle_ppi.iptm_B_1_A_1": "15.77",
+      "oracle_ppi.plddt_coi": "83.56",
+      "oracle_ppi.ptm_coi": "85.87",
+      "oracle_ppi.pae_coi": "2.6915",
+      "oracle_ppi.ipae_coi": "22.6016",
+      "oracle_ppi.min_ipae_coi": "13.5469",
+      "oracle_ppi.iptm_coi": "15.77",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_2/binder_il15_faceB_2_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_2/binder_il15_faceB_2_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.6881",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_2_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_20",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_20.cif",
+     "length": 212,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_20/binder_il15_faceB_20_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "212.0",
+      "amino_acid_composition.ala_fraction": "0.0425",
+      "amino_acid_composition.val_fraction": "0.0802",
+      "amino_acid_composition.gly_fraction": "0.0425",
+      "hotspot_obedience.hotspot_obedience": "0.3968",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "56.3",
+      "oracle_ppi.overall_pae": "17.4154",
+      "oracle_ppi.overall_ptm": "47.31",
+      "oracle_ppi.overall_iptm": "15.17",
+      "oracle_ppi.ranking_score": "0.216",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.9922",
+      "oracle_ppi.iptm_B_1_A_1": "15.17",
+      "oracle_ppi.plddt_coi": "79.45",
+      "oracle_ppi.ptm_coi": "81.51",
+      "oracle_ppi.pae_coi": "3.8436",
+      "oracle_ppi.ipae_coi": "23.0879",
+      "oracle_ppi.min_ipae_coi": "14.9922",
+      "oracle_ppi.iptm_coi": "15.17",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_20/binder_il15_faceB_20_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_20/binder_il15_faceB_20_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.6955",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_20_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_21",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_21.cif",
+     "length": 224,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_21/binder_il15_faceB_21_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "224.0",
+      "amino_acid_composition.ala_fraction": "0.0357",
+      "amino_acid_composition.val_fraction": "0.0893",
+      "amino_acid_composition.gly_fraction": "0.0312",
+      "hotspot_obedience.hotspot_obedience": "0.4762",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.68",
+      "oracle_ppi.overall_pae": "17.7574",
+      "oracle_ppi.overall_ptm": "48.0",
+      "oracle_ppi.overall_iptm": "14.47",
+      "oracle_ppi.ranking_score": "0.2117",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.0976",
+      "oracle_ppi.iptm_B_1_A_1": "14.46",
+      "oracle_ppi.plddt_coi": "72.74",
+      "oracle_ppi.ptm_coi": "77.46",
+      "oracle_ppi.pae_coi": "6.2831",
+      "oracle_ppi.ipae_coi": "23.4224",
+      "oracle_ppi.min_ipae_coi": "14.0976",
+      "oracle_ppi.iptm_coi": "14.46",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_21/binder_il15_faceB_21_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_21/binder_il15_faceB_21_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.9173",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_21_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_22",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_22.cif",
+     "length": 207,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_22/binder_il15_faceB_22_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "207.0",
+      "amino_acid_composition.ala_fraction": "0.058",
+      "amino_acid_composition.val_fraction": "0.0676",
+      "amino_acid_composition.gly_fraction": "0.0386",
+      "hotspot_obedience.hotspot_obedience": "0.4127",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "36.53",
+      "oracle_ppi.overall_pae": "21.7571",
+      "oracle_ppi.overall_ptm": "22.25",
+      "oracle_ppi.overall_iptm": "7.26",
+      "oracle_ppi.ranking_score": "0.1026",
+      "oracle_ppi.min_ipae_B_1_A_1": "20.375",
+      "oracle_ppi.iptm_B_1_A_1": "7.26",
+      "oracle_ppi.plddt_coi": "33.73",
+      "oracle_ppi.ptm_coi": "22.8",
+      "oracle_ppi.pae_coi": "16.3683",
+      "oracle_ppi.ipae_coi": "26.9106",
+      "oracle_ppi.min_ipae_coi": "20.375",
+      "oracle_ppi.iptm_coi": "7.26",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_22/binder_il15_faceB_22_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_22/binder_il15_faceB_22_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "16.3419",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_22_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_23",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_23.cif",
+     "length": 213,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_23/binder_il15_faceB_23_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "213.0",
+      "amino_acid_composition.ala_fraction": "0.0423",
+      "amino_acid_composition.val_fraction": "0.0892",
+      "amino_acid_composition.gly_fraction": "0.0423",
+      "hotspot_obedience.hotspot_obedience": "0.4762",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "58.87",
+      "oracle_ppi.overall_pae": "16.8121",
+      "oracle_ppi.overall_ptm": "49.49",
+      "oracle_ppi.overall_iptm": "15.37",
+      "oracle_ppi.ranking_score": "0.2219",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.961",
+      "oracle_ppi.iptm_B_1_A_1": "15.37",
+      "oracle_ppi.plddt_coi": "83.31",
+      "oracle_ppi.ptm_coi": "85.89",
+      "oracle_ppi.pae_coi": "2.7737",
+      "oracle_ppi.ipae_coi": "22.563",
+      "oracle_ppi.min_ipae_coi": "12.961",
+      "oracle_ppi.iptm_coi": "15.37",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_23/binder_il15_faceB_23_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_23/binder_il15_faceB_23_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.3722",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_23_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_24",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_24.cif",
+     "length": 200,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_24/binder_il15_faceB_24_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "200.0",
+      "amino_acid_composition.ala_fraction": "0.03",
+      "amino_acid_composition.val_fraction": "0.065",
+      "amino_acid_composition.gly_fraction": "0.025",
+      "hotspot_obedience.hotspot_obedience": "0.5238",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "55.47",
+      "oracle_ppi.overall_pae": "17.9783",
+      "oracle_ppi.overall_ptm": "43.92",
+      "oracle_ppi.overall_iptm": "11.82",
+      "oracle_ppi.ranking_score": "0.1824",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.9844",
+      "oracle_ppi.iptm_B_1_A_1": "11.82",
+      "oracle_ppi.plddt_coi": "78.65",
+      "oracle_ppi.ptm_coi": "82.65",
+      "oracle_ppi.pae_coi": "3.4216",
+      "oracle_ppi.ipae_coi": "24.1886",
+      "oracle_ppi.min_ipae_coi": "15.9844",
+      "oracle_ppi.iptm_coi": "11.82",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_24/binder_il15_faceB_24_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_24/binder_il15_faceB_24_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.1082",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_24_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_25",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_25.cif",
+     "length": 199,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_25/binder_il15_faceB_25_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "199.0",
+      "amino_acid_composition.ala_fraction": "0.0352",
+      "amino_acid_composition.val_fraction": "0.1055",
+      "amino_acid_composition.gly_fraction": "0.0352",
+      "hotspot_obedience.hotspot_obedience": "0.3651",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "49.85",
+      "oracle_ppi.overall_pae": "18.3882",
+      "oracle_ppi.overall_ptm": "40.04",
+      "oracle_ppi.overall_iptm": "12.88",
+      "oracle_ppi.ranking_score": "0.1831",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.9766",
+      "oracle_ppi.iptm_B_1_A_1": "12.88",
+      "oracle_ppi.plddt_coi": "65.09",
+      "oracle_ppi.ptm_coi": "66.56",
+      "oracle_ppi.pae_coi": "6.8049",
+      "oracle_ppi.ipae_coi": "23.6588",
+      "oracle_ppi.min_ipae_coi": "14.9766",
+      "oracle_ppi.iptm_coi": "12.88",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_25/binder_il15_faceB_25_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_25/binder_il15_faceB_25_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.0207",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_25_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_26",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_26.cif",
+     "length": 197,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "frames": "data/binder_il15_faceB/binder_il15_faceB_26/frames.pdb",
+     "nframes": 31,
+     "framesNoisy": "data/binder_il15_faceB/binder_il15_faceB_26/frames_noisy.pdb",
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_26/binder_il15_faceB_26_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "197.0",
+      "amino_acid_composition.ala_fraction": "0.0609",
+      "amino_acid_composition.val_fraction": "0.0558",
+      "amino_acid_composition.gly_fraction": "0.0203",
+      "hotspot_obedience.hotspot_obedience": "0.4921",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "52.43",
+      "oracle_ppi.overall_pae": "16.7164",
+      "oracle_ppi.overall_ptm": "44.17",
+      "oracle_ppi.overall_iptm": "15.91",
+      "oracle_ppi.ranking_score": "0.2156",
+      "oracle_ppi.min_ipae_B_1_A_1": "12.6407",
+      "oracle_ppi.iptm_B_1_A_1": "15.9",
+      "oracle_ppi.plddt_coi": "71.96",
+      "oracle_ppi.ptm_coi": "77.0",
+      "oracle_ppi.pae_coi": "3.8319",
+      "oracle_ppi.ipae_coi": "21.5554",
+      "oracle_ppi.min_ipae_coi": "12.6407",
+      "oracle_ppi.iptm_coi": "15.9",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_26/binder_il15_faceB_26_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_26/binder_il15_faceB_26_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.7349",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_26_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_27",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_27.cif",
+     "length": 203,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_27/binder_il15_faceB_27_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "203.0",
+      "amino_acid_composition.ala_fraction": "0.0394",
+      "amino_acid_composition.val_fraction": "0.0788",
+      "amino_acid_composition.gly_fraction": "0.0246",
+      "hotspot_obedience.hotspot_obedience": "0.2063",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "54.86",
+      "oracle_ppi.overall_pae": "18.7486",
+      "oracle_ppi.overall_ptm": "42.55",
+      "oracle_ppi.overall_iptm": "9.99",
+      "oracle_ppi.ranking_score": "0.165",
+      "oracle_ppi.min_ipae_B_1_A_1": "18.961",
+      "oracle_ppi.iptm_B_1_A_1": "9.99",
+      "oracle_ppi.plddt_coi": "77.42",
+      "oracle_ppi.ptm_coi": "78.69",
+      "oracle_ppi.pae_coi": "3.9941",
+      "oracle_ppi.ipae_coi": "25.2784",
+      "oracle_ppi.min_ipae_coi": "18.961",
+      "oracle_ppi.iptm_coi": "9.99",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_27/binder_il15_faceB_27_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_27/binder_il15_faceB_27_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "14.0622",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_27_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_28",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_28.cif",
+     "length": 205,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_28/binder_il15_faceB_28_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "205.0",
+      "amino_acid_composition.ala_fraction": "0.0634",
+      "amino_acid_composition.val_fraction": "0.078",
+      "amino_acid_composition.gly_fraction": "0.0293",
+      "hotspot_obedience.hotspot_obedience": "0.4127",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "48.17",
+      "oracle_ppi.overall_pae": "17.9471",
+      "oracle_ppi.overall_ptm": "41.19",
+      "oracle_ppi.overall_iptm": "13.6",
+      "oracle_ppi.ranking_score": "0.1912",
+      "oracle_ppi.min_ipae_B_1_A_1": "14.3867",
+      "oracle_ppi.iptm_B_1_A_1": "13.6",
+      "oracle_ppi.plddt_coi": "65.19",
+      "oracle_ppi.ptm_coi": "69.33",
+      "oracle_ppi.pae_coi": "5.6839",
+      "oracle_ppi.ipae_coi": "22.6164",
+      "oracle_ppi.min_ipae_coi": "14.3867",
+      "oracle_ppi.iptm_coi": "13.6",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_28/binder_il15_faceB_28_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_28/binder_il15_faceB_28_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "9.0414",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_28_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_29",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_29.cif",
+     "length": 216,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_29/binder_il15_faceB_29_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "216.0",
+      "amino_acid_composition.ala_fraction": "0.0509",
+      "amino_acid_composition.val_fraction": "0.0602",
+      "amino_acid_composition.gly_fraction": "0.0231",
+      "hotspot_obedience.hotspot_obedience": "0.5873",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "57.33",
+      "oracle_ppi.overall_pae": "16.962",
+      "oracle_ppi.overall_ptm": "49.9",
+      "oracle_ppi.overall_iptm": "15.22",
+      "oracle_ppi.ranking_score": "0.2216",
+      "oracle_ppi.min_ipae_B_1_A_1": "13.7422",
+      "oracle_ppi.iptm_B_1_A_1": "15.22",
+      "oracle_ppi.plddt_coi": "80.64",
+      "oracle_ppi.ptm_coi": "84.97",
+      "oracle_ppi.pae_coi": "3.2517",
+      "oracle_ppi.ipae_coi": "22.7129",
+      "oracle_ppi.min_ipae_coi": "13.7422",
+      "oracle_ppi.iptm_coi": "15.22",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_29/binder_il15_faceB_29_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_29/binder_il15_faceB_29_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "10.94",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_29_refolded.cif"
+    },
+    {
+     "id": "binder_il15_faceB_3",
+     "path": "data/binder_il15_faceB/binder_il15_faceB_3.cif",
+     "length": 222,
+     "chains": {
+      "designed": [
+       "B"
+      ],
+      "target": [
+       "A"
+      ]
+     },
+     "metrics": {
+      "designed_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_3/binder_il15_faceB_3_generated.cif",
+      "task": "binder_il15_faceB",
+      "dataset_name": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "chain_of_interest": "B_1",
+      "seed": "1234.0",
+      "input_json_path": "/home/bgeiss/rfd4-visualizer-runs/inputs/binder_il15_faceB.yaml",
+      "output_base_dir": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples",
+      "metrics_tags": "ppi_refolding,hotspot_conditioning",
+      "amino_acid_composition.n_generated_unknown_residues": "0.0",
+      "amino_acid_composition.n_standard_residues": "222.0",
+      "amino_acid_composition.ala_fraction": "0.045",
+      "amino_acid_composition.val_fraction": "0.0721",
+      "amino_acid_composition.gly_fraction": "0.018",
+      "hotspot_obedience.hotspot_obedience": "0.6032",
+      "pre_oracle_pass": "1.0",
+      "oracle_ppi.overall_plddt": "55.51",
+      "oracle_ppi.overall_pae": "17.0674",
+      "oracle_ppi.overall_ptm": "48.54",
+      "oracle_ppi.overall_iptm": "14.78",
+      "oracle_ppi.ranking_score": "0.2153",
+      "oracle_ppi.min_ipae_B_1_A_1": "15.1562",
+      "oracle_ppi.iptm_B_1_A_1": "14.78",
+      "oracle_ppi.plddt_coi": "75.37",
+      "oracle_ppi.ptm_coi": "80.14",
+      "oracle_ppi.pae_coi": "5.145",
+      "oracle_ppi.ipae_coi": "22.781",
+      "oracle_ppi.min_ipae_coi": "15.1562",
+      "oracle_ppi.iptm_coi": "14.78",
+      "oracle_ppi.refolded_structure_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_3/binder_il15_faceB_3_af2_ppi_refolded.cif",
+      "oracle_ppi.confidence_json_path": "/home/bgeiss/rfd4-visualizer-runs/binder_il15_faceB/inference_samples/binder_il15_faceB_3/binder_il15_faceB_3_af2_ppi_confidences.json",
+      "refolded_backbone_rmsd.rmsd": "11.157",
+      "ppi.pass": "0.0",
+      "ppi.all_metrics_present": "0.0"
+     },
+     "refolded": "data/binder_il15_faceB/binder_il15_faceB_3_refolded.cif"
+    }
+   ],
+   "target": "il15_faceB"
   }
  }
 }

@@ -17,6 +17,16 @@ node serve.mjs            # or: npm run serve
 Then open <http://localhost:8004/>. The dashboard is at
 <http://localhost:8004/admin.html>.
 
+Or build the Desktop app once and double click it from then on:
+
+```bash
+bash tools/make_app.sh
+```
+
+That puts **RFD4 Dashboard.app** on the Desktop. It starts the server if it is not already
+running and opens the dashboard, the same as the GROMACS one. Run it again after moving the
+site folder, since the app remembers where the folder was.
+
 If `node` is not on your PATH, VS Code ships one:
 
 ```bash

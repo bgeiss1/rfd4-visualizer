@@ -1,0 +1,187 @@
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 492.69it/s]
+[2026-11-07 07:05:14,374][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,376][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,393][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,413][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,582][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,596][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,599][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:14,617][atomworks.ml][WARNING] - Expandable segment sentinel insertion copied annotation values without explicit re-derivation for source atom_idx=1874: ['is_aromatic', 'is_backbone_atom', 'label_alt_id', 'stereo', 'transformation_id']
+[2026-11-07 07:05:23,585][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 192 tokens (batch size 1). This may take a few minutes.
+This shape may need recompiling in later runs; set TORCH_COMPILE_CACHE_BLOB to a persistent file path to preserve the cache.
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:660'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 660, in _sm90_inference_shape_owner
+    and _sm90_device(device)
+        ^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:1026'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 1026, in _blackwell_public_inference_shape_owner
+    capability = trimul_blackwell_capability(device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2716'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2716, in _owner_call_boundary
+    _sm90_device(x.device) or trimul_blackwell_capability(x.device) is not None
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2716'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2716, in _owner_call_boundary
+    _sm90_device(x.device) or trimul_blackwell_capability(x.device) is not None
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'triangle_multiplicative_update.py:2146'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/triangle_multiplicative_update.py", line 2146, in _blackwell_inference_contract
+    capability = trimul_blackwell_capability(x.device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm100_inference_torch.py:186'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm100_inference_torch.py", line 186, in route_supported
+    _extension_available()
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm100_inference_torch.py:189'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm100_inference_torch.py", line 189, in route_supported
+    and sm100_device_compatible(x.device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_sm120_projection_triton.py:135'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_sm120_projection_triton.py", line 135, in route_supported
+    and sm120_device_compatible(x.device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2762: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'trimul_output_tail_blackwell_torch.py:391'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+
+This call originates from:
+  File "/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/cuequivariance_ops_torch/trimul_output_tail_blackwell_torch.py", line 391, in route_supported
+    capability = device_capability(x0.device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  torch._dynamo.utils.warn_once(msg)
+[2026-11-07 07:06:01,582][rfproteina.utils.torch_compile][INFO] - Compiling model for padded length 224 tokens (batch size 1).
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/bgeiss/rfd4/RFD4-Proteina/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+crunching... 🔢 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8/8 0:02:36 • 0:00:00 0.08it/s 
+[2026-11-07 07:08:04,525][rfproteina.generate][INFO] - [rank: 0] ✓ Generation complete! Results saved to /home/bgeiss/rfd4-visualizer-runs/quickstart
+	Command being timed: "bash -c rfd4-generate inputs=/home/bgeiss/rfd4-visualizer-runs/inputs/quickstart.yaml out_dir=/home/bgeiss/rfd4-visualizer-runs/quickstart num_replicates=8 seed=1234 metrics_tags='[design]' generation.args.save_trajectory_every=2 generation.args.bb_ca_only_trajectories=false generation.args.dump_noisy_trajectories=true"
+	User time (seconds): 346.24
+	System time (seconds): 25.42
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:13.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6593632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 870
+	Minor (reclaiming a frame) page faults: 10557025
+	Voluntary context switches: 125626
+	Involuntary context switches: 14953
+	Swaps: 0
+	File system inputs: 1528
+	File system outputs: 967464
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
